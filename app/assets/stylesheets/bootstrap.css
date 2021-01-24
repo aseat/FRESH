@@ -43,6 +43,9 @@
     scroll-behavior: smooth;
   }
 }
+a {
+  text-decoration: none;
+}
 
 body {
   margin: 0;
@@ -592,6 +595,7 @@ progress {
   color: #6c757d;
 }
 
+
 .container,
 .container-fluid,
 .container-xxl,
@@ -711,6 +715,7 @@ progress {
 .col-4 {
   flex: 0 0 auto;
   width: 33.3333333333%;
+  font-size: 32px;
 }
 
 .col-5 {
@@ -2647,8 +2652,9 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  width: 100%;
+  width: 50%;
 }
+
 .input-group > .form-control,
 .input-group > .form-select {
   position: relative;
@@ -3175,9 +3181,14 @@ textarea.form-control-lg {
   background-color: transparent;
 }
 
+.btn-outline-third {
+  color: black;
+  border-color: black;
+}
+
 .btn-outline-secondary {
-  color: #6c757d;
-  border-color: #6c757d;
+  color: #fff;
+  border-color: #fff;
 }
 .btn-outline-secondary:hover {
   color: #fff;
@@ -6935,6 +6946,7 @@ textarea.form-control-lg {
 .py-3 {
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
+  background-color: #5c636a;
 }
 
 .py-4 {
@@ -7217,6 +7229,7 @@ textarea.form-control-lg {
 
 .bg-light {
   background-color: #f8f9fa !important;
+  
 }
 
 .bg-dark {

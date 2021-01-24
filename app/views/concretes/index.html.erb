@@ -9,19 +9,121 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-      <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
-      </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#">コンクリート</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <% if user_signed_in? %>
+        <a class="btn btn-sm btn-outline-secondary" <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></a>
+       <% else %>
+         <a class="btn btn-sm btn-outline-secondary" href="/users/sign_up">新規登録</a>
+         <a class="btn btn-sm btn-outline-secondary" href="/users/sign_in">ログイン</a>
+         <a class="btn btn-sm btn-outline-secondary" href="/users/guest_sign_in">ゲストログイン</a>
+      <% end %>
+      </div>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="/ways">試験方法</a>
+      <a class="p-2 link-secondary" href="/words">用語</a>
+      <a class="p-2 link-secondary" href="/questions">試験問題</a>
+      <a class="p-2 link-secondary" href="/answers">Q&A</a>
+      <% if user_signed_in? %>
+      <a class="p-2 link-secondary" href="/users/edit"><%=current_user.nickname%>さん</a>
+  <% else %>
+  
+  <% end %>
+   </nav>
+  </div>
+</div>
+
+
+  <body>
+   <main class="container">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">人気のブログポストのタイトル</h1>
+      <p class="lead my-3">前置きとなる数行の文を書きます。新しい読者にこのポストの何が最も面白いかを早く効率よく伝えましょう。</p>
+      <p class="lead mb-0"><a href="#" class="text-white fw-bold">続きを読む</a></p>
+    </div>
+  </div>
+
+</div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+        
+          <h3 class="mb-0">人気のポスト</h3>
+          <div class="mb-1 text-muted">11/12</div>
+          <p class="card-text mb-auto">問.海岸環境が構造物に作用する厳しさは、海中＞飛沫帯＞海上大気中である。</p>
+          <a href="#" class="stretched-link">続きを見る</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="300"></svg>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">国際</strong>
+          <h3 class="mb-0">人気のポスト</h3>
+          <div class="mb-1 text-muted">11/12</div>
+          <p class="card-text mb-auto">これは写真の解説文付きのカードです。自然に説明を加えることができます。</p>
+          <a href="#" class="stretched-link">続きを見る</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="300"><title>Placeholder</title></svg>
+</div>
+      </div>
+    </div>
+  </div>
+    </div>
+<div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">国際</strong>
+          <h3 class="mb-0">人気のポスト</h3>
+          <div class="mb-1 text-muted">11/12</div>
+          <p class="card-text mb-auto">これは写真の解説文付きのカードです。自然に説明を加えることができます。</p>
+          <a href="#" class="stretched-link">続きを見る</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="300"></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">国際</strong>
+          <h3 class="mb-0">人気のポスト</h3>
+          <div class="mb-1 text-muted">11/12</div>
+          <p class="card-text mb-auto">これは写真の解説文付きのカードです。自然に説明を加えることができます。</p>
+          <a href="#" class="stretched-link">続きを見る</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="300"><title>Placeholder</title></svg>
+ </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    
+   <footer class="container">
+   
+    <p>&copy; 2021 Company, Inc. 
+     </body>
 </html>
