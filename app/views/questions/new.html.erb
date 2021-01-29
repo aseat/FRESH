@@ -1,0 +1,47 @@
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="/">◯×問題</a>
+      </div>
+</header>
+
+<body>
+  <div class=container>
+  <h2>◯×問題 投稿</h2>
+  <div class='form-wrapper'>
+ <%#= form_with model: @question, local: true do |f| %>
+
+
+    <p>
+    <div class="field form-group">
+      <label for="article_important_point">問題文(必須)</label><br />
+      <textarea rows="5" class="form-control" name="article[important_point]" id="article_important_point">
+</textarea>
+    </div>
+   <p>
+    <div class="field form-group">
+      <label for="article_important_point">解説(必須)</label><br />
+      <textarea rows="5" class="form-control" name="article[important_point]" id="article_important_point">
+</textarea>
+    </div>
+   <p>
+   <div class="field form-group">
+   <select class="form-control" name="q[target_site_id_eq]" id="q_target_site_id_eq"><option value="">答えを選択</option>
+   </div>
+   <p>
+    
+
+</p>
+<div class="field">
+    <label>プロフィール画像(任意)</label><br />
+    <%#= f.file_field :image, id:"inputFile" %>
+  </div>
+   <%# end %> 
+<p>
+    <div class="actions text-right">
+      <input type="submit" name="commit" value="投稿する" class="btn-default red-round-btn" data-disable-with="投稿する" />
+    <a class="btn-default cancel-round-btn" href="/ways">キャンセル</a>
+    </div>
+</form></div>
+</body>

@@ -13,23 +13,35 @@
 <div class="input-group">
 	<input type="text" class="form-control">
   <a class="btn btn-sm btn-outline-third" href="#">検索</a>
-<a class="btn btn-sm btn-outline-third" href="#">新規投稿</a>
+<a class="btn btn-sm btn-outline-third" href="/ways/new">新規投稿</a>
   </div>
 <p>
 
+
 <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <h1>ki</h1>
-            <%= link_to image_tag("staff3.jpg", class:"card-img-top"), "#" %>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <ul class="card mb-4 shadow-sm">
+           <% @way.each do |way| %>
+            <%= way.name %>
+        
+            <%#= iframe{src: "https://www.youtube.com/embed/#{product.youtube_url[32..42]}",allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "315", width: "560"} %>
+            
+            <div class="card mb-4 shadow-sm1">
+             <%= way.text %>
+
+           <% if way.image.attached? %>
+            <%= link_to image_tag(way.image.variant(resize: '320x320'),class:"card-img-top"),way_path(way.id) %>
+          　<% end %>
+
+            
+
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
                 <small class="text-muted">9 mins</small>
+             </ul>
               </div>
+              <% end %>
             </div>
           </div>
         </div>

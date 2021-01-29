@@ -210,8 +210,8 @@ sup {
 }
 
 a {
-  color: #0d6efd;
-  text-decoration: underline;
+  color: black;
+  text-decoration: none;
 }
 a:hover {
   color: #0a58ca;
@@ -2152,9 +2152,29 @@ progress {
   color: #6c757d;
 }
 
+.form-control1 {
+  height: 35px;
+  width: 290px;
+  display: block;
+box-sizing: 500px;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 .form-control {
   display: block;
-  width: 100%;
+
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -3187,8 +3207,8 @@ textarea.form-control-lg {
 }
 
 .btn-outline-secondary {
-  color: #fff;
-  border-color: #fff;
+  color: black;
+  border-color: black;
 }
 .btn-outline-secondary:hover {
   color: #fff;
@@ -4271,6 +4291,8 @@ textarea.form-control-lg {
 .card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  height: 600px;
+  width: 300px;
 }
 
 .card-img,
@@ -6212,7 +6234,13 @@ textarea.form-control-lg {
 }
 
 .shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  display: flex;
+  font-size: 26px;
+}
+
+.shadow-sm1 {
+  
+  font-size: 14px;
 }
 
 .shadow-lg {

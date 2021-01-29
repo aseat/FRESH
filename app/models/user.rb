@@ -8,8 +8,8 @@ class User < ApplicationRecord
   user.password = SecureRandom.urlsafe_base64
   end
   end
-  
- has_one_attached :image
+  has_many :ways
+  has_one_attached :image
 
   with_options presence: true do
     validates :nickname
