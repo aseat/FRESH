@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<div class="container">
-  <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="/">試験方法</a>
-      </div>
-  
-    </div>
-  </header>
-  <p>
-  </p>
+<%= render "devise/shared/header" %>
 <div class="input-group">
 	<input type="text" class="form-control">
   <a class="btn btn-sm btn-outline-third" href="#">検索</a>
@@ -17,23 +6,42 @@
   </div>
 <p>
 
-<% @way.each do |way| %>
-<div class="col-md-4">
-          <ul class="card mb-4 shadow-sm">
-           
-            <%= way.name %>
-        
-            
-            <div class="card mb-4 shadow-sm1">
-             <%= way.text %>
 
-           <% if way.image.attached? %>
-            <%= link_to image_tag(way.image.variant(resize: '320x320'),class:"card-img-top"),way_path(way.id) %>
-          　<% end %>
-<div class="d-flex justify-content-between align-items-center">
-</div>
-                <small class="text-muted">9 mins</small>
+
+
+<div class="album py-5 bg-light">
+
+    <div class="container">
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% @way.each do |way| %>
+       <div class="col">
+      <div class="card shadow-sm">
+<% if way.video.attached? %>
+<%= link_to "クリックすると動画が見れます",way_path(way.id)%>
 <% end %>
-              
-              
-           
+            <% if way.image.attached? %>
+            <%= link_to image_tag(way.image,class:"bd-placeholder-img card-img-top",width:"100%",height:"300px"),way_path(way.id) %>
+          　<% end %>
+      <div class="card-body">
+          <p class="card-text">
+          <%= link_to way.name,way_path(way.id) %>
+          </p>
+        
+           <p class="card-text">
+             <%= way.text %>
+             </p>
+   <div class="d-flex justify-content-between align-items-center">
+                 <small class="text-muted"><%= l way.created_at %></small>
+
+</div>
+</div>
+
+</div>
+</div>
+     <% end %>
+      </div>
+</div> 
+</div>
+        
+

@@ -1,39 +1,46 @@
-<!DOCTYPE html>
-<div class="container">
-  <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="/">試験方法</a>
-      </div>
-  
-    </div>
-  </header>
-           <div class="col-md-4">
-          <ul class="card mb-4 shadow-sm">
+<%= render "devise/shared/header" %>
+ <div class="col">
+      <div class="card shadow-sm">
            
-            <%= @way.name %>
-        
-            
-            <div class="card mb-4 shadow-sm1">
-             <%= @way.text %>
-
+           
            <% if @way.image.attached? %>
-            <%= link_to image_tag(@way.image.variant(resize: '320x320'),class:"card-img-top"),way_path(@way.id) %>
+            <%= image_tag @way.image %>
           　<% end %>
+         <% if @way.video.attached? %>
+         <video src="<%= rails_blob_path(@way.video) %>" type="video/mp4" controls></video>
+         <% end %>
 
             
-
-              <div class="d-flex justify-content-between align-items-center">
-               <div id="like-btn-<%= @way.id %>">
-            <%= render partial: "like", locals: { way: @way } %>
-             </div>
-
-             <% if user_signed_in? && current_user.id == @way.user.id %>
+<div class="card-body">
+          <div class="card-text">
+          <%#= image_tag @way.user.image %><%= @way.user.nickname %>
+          </div>
+        <p>
+           <p class="card-text">
+             <%= @way.text %>
+             </p>
+             <div id="like-btn-<%= @way.id %>">
+              <%= render 'like', post: @way %>
+            </div>
+   <div class="d-flex justify-content-between align-items-center">
+                 <small class="text-muted"><%= l @way.created_at %></small>
+<% if user_signed_in? && current_user.id == @way.user.id %>
              
-                <div class="btn-group">
-                  <%= link_to '編集', edit_way_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
-                  <%= link_to '削除', way_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
-                 </div>
-                 <% end %>
+ <div class="btn-group">
+  <%= link_to '編集', edit_way_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
+ <%= link_to '削除', way_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
+ </div>
+ <% end %>
+</div>
+</div>
+
+</div>
+</div>
+      </div>
+</div> 
+</div>
+
+
+             
               
   

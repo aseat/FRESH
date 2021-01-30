@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :ways do
     post 'add' => 'likes#create'
     delete '/add' => 'likes#destroy'
-    end
+  end
+
   resources :questions, only: [:index,:new,:edit,:show]
   resources :answers, only: [:index,:new,:edit,:show]
   resources :words, only: [:index,:new,:edit,:show]

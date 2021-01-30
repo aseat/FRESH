@@ -1,9 +1,9 @@
-<% if way.liked_by?(current_user) %>
-   <%= link_to(way_add_path(way), method: :delete, remote: true, id: :"like-button-#{way.id}") do %>
+<% if @way.liked_by?(current_user) %>
+   <%= link_to(way_add_path(@way), method: :delete, remote: true, id: :"like-button-#{@way.id}") do %>
        <i class="btn btn-sm btn-outline-secondary">いいねを外す</i>
    <% end %>
 <% else %>
-   <%= link_to(way_add_path(way), method: :post, remote: true, id: :"like-button-#{way.id}") do %>
+   <%= link_to(way_add_path(@way), method: :post, remote: true, id: :"like-button-#{@way.id}") do %>
       <i class="btn btn-sm btn-outline-secondary">いいね</i>
    <% end %>
 <% end %>
