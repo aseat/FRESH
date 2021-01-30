@@ -8,27 +8,32 @@
   
     </div>
   </header>
+           <div class="col-md-4">
+          <ul class="card mb-4 shadow-sm">
+           
             <%= @way.name %>
-            <p>
-           <% if @way.image.attached? %>
-            <%=image_tag @way.image, size:"320x320",class:"card-img-top" %>
-          　<% end %>
-
-          <% if @way.video.attached? %>
-          <video src="<%= rails_blob_path(@way.video) %>" type="video/mp4"  controls></video>
-          <% end %>
-
-            <%#= iframe{src: "https://www.youtube.com/embed/#{product.youtube_url[32..42]}",allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen: "", frameborder: "0", height: "315", width: "560"} %>
+        
             
             <div class="card mb-4 shadow-sm1">
              <%= @way.text %>
-             <% if user_signed_in? && current_user.id == @way.user.id %>
+
+           <% if @way.image.attached? %>
+            <%= link_to image_tag(@way.image.variant(resize: '320x320'),class:"card-img-top"),way_path(@way.id) %>
+          　<% end %>
+
+            
+
               <div class="d-flex justify-content-between align-items-center">
+               <div id="like-btn-<%= @way.id %>">
+            <%= render partial: "like", locals: { way: @way } %>
+             </div>
+
+             <% if user_signed_in? && current_user.id == @way.user.id %>
+             
                 <div class="btn-group">
                   <%= link_to '編集', edit_way_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
                   <%= link_to '削除', way_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
                  </div>
                  <% end %>
-                <small class="text-muted">9 mins</small>
-              </div>
+              
   

@@ -1,11 +1,11 @@
 class WaysController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_way, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @way = Way.includes(:user).order('created_at DESC')
   end
-  
+
   def new
     @way = Way.new
   end
@@ -23,7 +23,7 @@ class WaysController < ApplicationController
   def edit
     redirect_to action: :index unless @way.user.id == current_user.id
   end
-  
+
   def show
   end
 
@@ -43,15 +43,14 @@ class WaysController < ApplicationController
       render :new
     end
   end
-  
+
   private
 
   def way_params
-    params.require(:way).permit(:name, :text, :youtube_url, :image,:video).merge(user_id: current_user.id)
+    params.require(:way).permit(:name, :text, :youtube_url, :image, :video).merge(user_id: current_user.id)
   end
 
   def set_way
     @way = Way.find(params[:id])
   end
-
 end

@@ -1,4 +1,2 @@
 class ConcretesController < ApplicationController
-
-  
 end
