@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root to: "concretes#index"
   resources :ways do
   resources :likes, only: [:create, :destroy]
+  resources :waycomments, only: [:create, :destroy]
   end
 
   resources :questions, only: [:index,:new,:edit,:show]

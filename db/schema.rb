@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_110648) do
+ActiveRecord::Schema.define(version: 2021_02_01_121357) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(version: 2021_01_31_110648) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "waycomments", charset: "utf8", force: :cascade do |t|
+    t.bigint "way_id", null: false
+    t.bigint "user_id", null: false
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_waycomments_on_user_id"
+    t.index ["way_id"], name: "index_waycomments_on_way_id"
+  end
+
   create_table "ways", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "text", null: false
@@ -97,5 +107,7 @@ ActiveRecord::Schema.define(version: 2021_01_31_110648) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "likes", "users"
   add_foreign_key "likes", "ways"
+  add_foreign_key "waycomments", "users"
+  add_foreign_key "waycomments", "ways"
   add_foreign_key "ways", "users"
 end

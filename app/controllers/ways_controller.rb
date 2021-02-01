@@ -25,6 +25,8 @@ class WaysController < ApplicationController
   end
 
   def show
+    @waycomment = Waycomment.new
+    @waycomments = @way.waycomments.includes(:user)
   end
 
   def update

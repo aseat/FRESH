@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :ways
   has_one_attached :image
   has_many :likes
-
+  has_many :waycomments
   with_options presence: true do
     validates :nickname
     validates :text

@@ -47,7 +47,27 @@
   </div>
 
        <div class="card-body">
-        <%= "コメント一覧" %>
+               <% if user_signed_in? && current_user.id == @way.user_id %>
+           <%= form_with model: [@way,@waycomment], local: true do |f|%>
+              <div class="field form-group">
+               <%= f.label :text, "コメント" %><br />
+               <%= f.text_field :text, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
+              </div>
+             <div class="actions text-right">
+               <%= f.submit "送信する", class:"btn-default red-round-btn"  %>
+              </div>
+           <% end %> 
+        <% else %>
+        <% end %>
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+         <%='コメント一覧'%>
+        <% @waycomments.each do |waycomment| %>
+            <li class="card-text">
+              
+               <%= @waycomment.text %>
+          </li> 
+               <% end %>
        </div>
 
              
