@@ -1,0 +1,2 @@
+$('#<%= @way.id.to_s %>').
+  html('<%= j render "ways/liked", { way: @way } %>');

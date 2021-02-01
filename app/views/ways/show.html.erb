@@ -19,27 +19,36 @@
            <p class="card-text">
              <%= @way.text %>
              </p>
-             <div id="like-btn-<%= @way.id %>">
-              <%= render 'like', post: @way %>
-            </div>
-   <div class="d-flex justify-content-between align-items-center">
+       
+             <div id="<%= @way.id.to_s %>">
+           <% if @way.liked_by(current_user).present? %>
+          <%= link_to(way_like_path(@way.id, @way.liked_by(current_user)), method: :DELETE, remote: true, class: "liked") do %>
+            <i class="btn btn-sm btn-outline-secondary">いいねを外す</i>
+          <% end %>
+        <% else %>
+          <%= link_to(way_likes_path(@way), method: :POST, remote: true, class: "like") do %>
+            <i class="btn btn-sm btn-outline-secondary">いいね</i>
+          <% end %>
+        <% end %>
+        </div>
+</div>
+
+    <div class="d-flex justify-content-between align-items-center">
                  <small class="text-muted"><%= l @way.created_at %></small>
-<% if user_signed_in? && current_user.id == @way.user.id %>
+     <% if user_signed_in? && current_user.id == @way.user.id %> 
              
- <div class="btn-group">
-  <%= link_to '編集', edit_way_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
- <%= link_to '削除', way_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
+     <div class="btn-group">
+      <%= link_to '編集', edit_way_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
+     <%= link_to '削除', way_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
+     </div>
+     <% end %>
+    </div>
  </div>
- <% end %>
-</div>
-</div>
+  </div>
 
-</div>
-</div>
-      </div>
-</div> 
-</div>
-
+       <div class="card-body">
+        <%= "コメント一覧" %>
+       </div>
 
              
               

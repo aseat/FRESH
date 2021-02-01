@@ -47,7 +47,7 @@ class WaysController < ApplicationController
   private
 
   def way_params
-    params.require(:way).permit(:name, :text, :youtube_url, :image, :video).merge(user_id: current_user.id)
+    params.require(:way).permit(:name, :text, :image, :video).merge(user_id: current_user.id)
   end
 
   def set_way

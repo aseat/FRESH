@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+  get 'favorites/destroy'
   resources :posts
   devise_for :users
   devise_scope :user do
@@ -7,8 +9,7 @@ Rails.application.routes.draw do
  
   root to: "concretes#index"
   resources :ways do
-    post 'add' => 'likes#create'
-    delete '/add' => 'likes#destroy'
+  resources :likes, only: [:create, :destroy]
   end
 
   resources :questions, only: [:index,:new,:edit,:show]

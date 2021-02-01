@@ -9,13 +9,8 @@ class User < ApplicationRecord
     end
   end
   has_many :ways
-  has_many :likes, dependent: :destroy
-  has_many :like_ways, through: :likes, source: :way
   has_one_attached :image
-
-  def liked_by?(way_id)
-    likes.where(way_id: way_id).exists?
-  end
+  has_many :likes
 
   with_options presence: true do
     validates :nickname

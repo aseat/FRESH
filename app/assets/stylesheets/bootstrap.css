@@ -1873,6 +1873,14 @@ progress {
     --bs-gutter-x: 0;
   }
 
+  .like {
+    color: gray;
+  }
+  
+  .liked {
+    color: red;
+  }
+
   .g-xxl-0,
 .gy-xxl-0 {
     --bs-gutter-y: 0;
