@@ -3,7 +3,7 @@ class WordsController < ApplicationController
   before_action :set_word, only: [:show, :edit, :update, :destroy]
 
   def index
-    @word = Word.includes(:user).order('word DESC')
+    @word = Word.includes(:user).order('yomi')
   end
 
   def new
@@ -25,7 +25,6 @@ class WordsController < ApplicationController
   end
 
   def show
-   
   end
 
   def update

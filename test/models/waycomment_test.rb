@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class WaycommentTest < ActiveSupport::TestCase
   # test "the truth" do
