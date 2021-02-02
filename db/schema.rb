@@ -99,8 +99,13 @@ ActiveRecord::Schema.define(version: 2021_02_01_121357) do
   end
 
   create_table "words", charset: "utf8", force: :cascade do |t|
+    t.string "word", null: false
+    t.string "yomi", null: false
+    t.text "mean", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_words_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -110,4 +115,5 @@ ActiveRecord::Schema.define(version: 2021_02_01_121357) do
   add_foreign_key "waycomments", "users"
   add_foreign_key "waycomments", "ways"
   add_foreign_key "ways", "users"
+  add_foreign_key "words", "users"
 end

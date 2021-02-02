@@ -1,37 +1,36 @@
-<div class="container">
-  <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="/">建築用語</a>
-      </div>
-</header>
+<%= render "devise/shared/header" %>
 
-<body>
+
   <div class=container>
   <h2>建築用語 新規投稿</h2>
   <div class='form-wrapper'>
-  <%= form_with model: @way, local: true do |f| %>
+  <%= form_with model: @word, local: true do |f| %>
 
-    <div class="field form-group">
-      <label for="article_title">用語(必須)</label>
-      <input placeholder="試験名を入力してください" class="form-control" type="text" name="article[title]" id="article_title" />
+     <div class="field form-group">
+      <%= f.label :word, "用語(必須)" %><br />
+       <%= f.file_field :word, id:"inputFile",class:"form-control" ,type:"text", id:"article_title" %>
     </div>
     <p>
     <div class="field form-group">
-      <label for="article_important_point">意味(必須)</label><br />
-      <textarea rows="5" class="form-control" name="article[important_point]" id="article_important_point">
-</textarea>
+      <%= f.label :yomi, "読み(全角 必須)" %><br />
+    <%= f.file_field :yomi, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
+    </div>
+<p>
+<div class="field form-group">
+      <%= f.label :mean, "意味(必須)" %><br />
+    <%= f.text_area :mean, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
     </div>
 <p>
 <div class="field">
     <label>プロフィール画像(任意)</label><br />
     <%= f.file_field :image, id:"inputFile" %>
   </div>
-   <% end %> 
+  
 <p>
     <div class="actions text-right">
-      <input type="submit" name="commit" value="投稿する" class="btn-default red-round-btn" data-disable-with="投稿する" />
-    <a class="btn-default cancel-round-btn" href="/ways">キャンセル</a>
-    </div>
-</form></div>
-</body>
+      <%= f.submit "投稿する",class:"btn-default red-round-btn"%>
+     </div>
+     <p>
+     </p>
+    <%=link_to 'キャンセル', words_path, class:"btn-default cancel-round-btn" %>
+     <% end %>

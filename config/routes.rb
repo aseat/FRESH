@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :waycomments, only: [:create, :destroy]
   end
 
-  resources :questions, only: [:index,:new,:edit,:show]
-  resources :answers, only: [:index,:new,:edit,:show]
-  resources :words, only: [:index,:new,:edit,:show]
+  resources :questions
+  resources :answers
+  resources :words
 end
