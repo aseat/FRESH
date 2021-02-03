@@ -4,6 +4,6 @@ class Word < ApplicationRecord
   with_options presence: true do
     validates :mean
     validates :word
-    validates :yomi, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'Full-width characters' }
+    validates :yomi, format: { with: /[ぁ-んァ-ンー－]/, message: 'Full-width characters' }
   end
 end

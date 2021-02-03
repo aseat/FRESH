@@ -268,6 +268,13 @@ figure {
   margin: 0 0 1rem;
 }
 
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: red;
+}
+
 img,
 svg {
   vertical-align: middle;

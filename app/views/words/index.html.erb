@@ -2,18 +2,79 @@
 <div class="input-group">
 	<input type="text" class="form-control">
   <a class="btn btn-sm btn-outline-third" href="#">検索</a>
-<a class="btn btn-sm btn-outline-third" href="/ways/new">新規投稿</a>
+<a class="btn btn-sm btn-outline-third" href="/words/new">新規投稿</a>
   </div>
 <p>
 
 
 <div class="col">
       <div class="card shadow-sm">
-           <% @word.each do |word| %>
-
 <span style="font-size:30px; color:black; font-weight:bold;">あ行</span>
 <p>
+<% @word.each do |word| %>
 <div class="card-text">
             <%= '・' %><%= link_to word.word,word_path(word.id) %>
 <% end %>
-      
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">か行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">さ行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">た行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">な行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">は行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">ま行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">ら行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">ら行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
+<p>
+<span style="font-size:30px; color:black; font-weight:bold;">わ行</span>
+<p>
+<% @word.each do |word| %>
+<div class="card-text">
+            <%= '・' %><%= link_to word.word,word_path(word.id) %>
+<% end %>
