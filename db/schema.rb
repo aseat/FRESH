@@ -59,11 +59,6 @@ ActiveRecord::Schema.define(version: 2021_02_01_121357) do
     t.index ["way_id"], name: "index_likes_on_way_id"
   end
 
-  create_table "questions", charset: "utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
