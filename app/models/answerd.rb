@@ -7,4 +7,5 @@ class Answerd < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :questions
+  belongs_to :choice
 end

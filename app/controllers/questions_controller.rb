@@ -13,8 +13,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.create(question_params)
     if @question.save
-
-      redirect_to ways_path
+    redirect_to questions_path
     else
       render :new
     end
@@ -30,7 +29,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to way_path
+      redirect_to question_path
     else
       render :new
     end
@@ -39,7 +38,7 @@ class QuestionsController < ApplicationController
   def destroy
     if current_user.id == @question.user.id
       @question.destroy
-      redirect_to ways_path
+      redirect_to questions_path
     else
       render :new
     end
@@ -47,7 +46,7 @@ class QuestionsController < ApplicationController
 
   private
 
-  def way_params
+  def question_params
     params.require(:question).permit(:problem, :answerd_id, :image, :commentary, :category_id).merge(user_id: current_user.id)
   end
 

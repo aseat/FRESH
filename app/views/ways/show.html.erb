@@ -19,18 +19,9 @@
            <p class="card-text">
              <%= @way.text %>
              </p>
-       
-             <div id="<%= @way.id.to_s %>">
-           <% if @way.liked_by(current_user).present? %>
-          <%= link_to(way_like_path(@way.id, @way.liked_by(current_user)), method: :DELETE, remote: true, class: "liked") do %>
-            <i class="btn btn-sm btn-outline-secondary">いいねを外す</i>
-          <% end %>
-        <% else %>
-          <%= link_to(way_likes_path(@way), method: :POST, remote: true, class: "like") do %>
-            <i class="btn btn-sm btn-outline-secondary">いいね</i>
-          <% end %>
-        <% end %>
-        </div>
+        <tr id= "way_<%= @way.id %>">
+        <%= render "way", post: @way %>
+             </tr>
 </div>
 
     <div class="d-flex justify-content-between align-items-center">
@@ -51,7 +42,7 @@
            <%= form_with model: [@way,@waycomment], local: true do |f|%>
               <div class="field form-group">
                <%= f.label :text, "コメント" %><br />
-               <%= f.text_field :text, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
+               <%= f.text_field :text,id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
               </div>
              <div class="actions text-right">
                <%= f.submit "送信する", class:"btn-default red-round-btn"  %>

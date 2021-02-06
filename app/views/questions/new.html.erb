@@ -30,11 +30,13 @@
     <label>画像(任意)</label><br />
     <%= f.file_field :image, id:"inputFile" %>
   </div>
+<p>
+  <div class="actions text-right">
+      <%= f.submit "投稿する",class:"btn-default red-round-btn"%>
+     </div>
+     <p>
+     </p>
+    <%=link_to 'キャンセル', questions_path, class:"btn-default cancel-round-btn" %>
    <% end %> 
 <p>
-    <div class="actions text-right">
-      <input type="submit" name="commit" value="投稿する" class="btn-default red-round-btn" data-disable-with="投稿する" />
-    <a class="btn-default cancel-round-btn" href="/ways">キャンセル</a>
-    </div>
-</form></div>
-</body>
+    

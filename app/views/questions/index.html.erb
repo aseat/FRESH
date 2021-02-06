@@ -12,12 +12,18 @@
 <a class="btn btn-sm btn-outline-third" href="/questions/new">新規投稿</a>
   </div>
 <p>
-
-<div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <h1>ki</h1>
-           
-              </div>
-            </div>
-          </div>
-        </div>
+ <% @question.each do |question| %>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      
+       <div class="col">
+      <div class="card shadow-sm">
+   <%= "問."%><%= link_to question.problem,question_path(question.id) %> 
+     
+     <div>
+    
+     </div>
+     <p>
+</div>
+</div>
+</div>
+<% end %>
