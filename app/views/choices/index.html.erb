@@ -2,37 +2,41 @@
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       
+     
        <div class="col">
       <div class="card shadow-sm">
-   <%= "問."%><%= @question.problem %> 
-  
+    
+   <%= "問."%><%= @questions.problem %> 
 
 <div>
 
 </div>
      <p>
- <div class="d-flex justify-content-between align-items-center"> 
-     <div class="btn-group">
-   
-   <%= "カテゴリー："%><%= @question.category.name %> 
+ <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<div class="col">
+      <div class="card shadow-sm">
+   <%= "カテゴリー："%><%= @questions.category.name %> 
     </div>
-
-       
+    <p>
+    </p>
+    <div class="btn-group">
+  <%= current_user.nickname %><%= "さんの答え：" %><%#= @choice.choose.name %> 
+       </div>
 <div>
 </div>
-
+</div>
 
 </div>
 </div>
 </div>
 
-
+<p>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 <div class="col">
       <div class="card shadow-sm">
-  <%= "正解 "%><%= @question.answerd.name %>
+  <%= "正解 "%><%= @questions.answerd.name %>
    <p>
-   <%= "解説："%><%= @question.commentary %>
+   <%= "解説："%><%= @questions.commentary %>
 </div>
 </div>
 </div>
