@@ -1,11 +1,9 @@
 class Choice < ApplicationRecord
-  self.data = [
-    { id: 1, name: '--' },
-    { id: 2, name: '○' },
-    { id: 3, name: '×' },
-  ]
-
-  include ActiveHash::Associations
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :questions
   has_one :answerd
+  with_options numericality: { other_than: 1, message: 'Select' }, presence: true do
+    validates :choose_id
+  end
 end

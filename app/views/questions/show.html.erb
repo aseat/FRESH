@@ -5,15 +5,22 @@
        <div class="col">
       <div class="card shadow-sm">
    <%= "問."%><%= @question.problem %> 
+  
+
 <div>
+
 </div>
      <p>
  <div class="d-flex justify-content-between align-items-center">
-
+<%= form_with model: @choice, local: true do |f|%>
      <div class="btn-group">
-      <%= link_to '○', edit_question_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
+    
+      <%= f.collection_select(:choose_id, Choose.all, :id, :name, {}, {class:"btn btn-sm btn-outline-secondary", id:"category"}) %>
  
-     <%= link_to '×', question_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %>             
+     <%= f.submit '答える', class:'btn btn-sm btn-outline-secondary' %>
+     </div>             
+<% end %>
+
      <% if user_signed_in? && current_user.id == @question.user.id %> 
              
      <div class="btn-group">
@@ -21,8 +28,25 @@
      <%= link_to '削除', question_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
      </div>
      <% end %>
+   <%= "カテゴリー："%><%= @question.category.name %> 
     </div>
 
+       
+<div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<div class="col">
+      <div class="card shadow-sm">
+  <%= "正解 "%><%= @question.answerd.name %>
+   <p>
+   <%= "解説："%><%= @question.commentary %>
 </div>
 </div>
 </div>

@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_02_04_131148) do
   end
 
   create_table "choices", charset: "utf8", force: :cascade do |t|
-    t.integer "useranswer", null: false
+    t.integer "choose_id", null: false
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

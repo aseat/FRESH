@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   resources :waycomments, only: [:create, :destroy]
   end
 
-  resources :questions
+  resources :questions do
+    resources :choices, only: [:index,:create]
+  end
+
   resources :answers
   resources :words
 end
