@@ -41,8 +41,13 @@ ActiveRecord::Schema.define(version: 2021_02_04_131148) do
   end
 
   create_table "answers", charset: "utf8", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.string "title", null: false
+    t.text "question", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "choices", charset: "utf8", force: :cascade do |t|
@@ -126,6 +131,7 @@ ActiveRecord::Schema.define(version: 2021_02_04_131148) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "answers", "users"
   add_foreign_key "choices", "questions"
   add_foreign_key "choices", "users"
   add_foreign_key "likes", "users"

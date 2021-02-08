@@ -23,8 +23,9 @@ class QuestionsController < ApplicationController
     redirect_to action: :index unless @question.user.id == current_user.id
   end
 
-  def show
   
+  def show
+    @choice = Choice.new
 
   end
 

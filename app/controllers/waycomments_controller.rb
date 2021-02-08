@@ -1,6 +1,6 @@
 class WaycommentsController < ApplicationController
   def create
-    @waycomment = Waycomment.create!(@waycomment_params)
+    @waycomment = Waycomment.create!(waycomment_params)
     redirect_to way_path(@way.id)
   end
 

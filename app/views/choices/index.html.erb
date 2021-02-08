@@ -20,7 +20,7 @@
     <p>
     </p>
     <div class="btn-group">
-  <%= current_user.nickname %><%= "さんの答え：" %><%#= @choice.choose.name %> 
+  <%= current_user.nickname %><%= "さんの答え：" %><%= @choice.choose.name %> 
        </div>
 <div>
 </div>
@@ -38,5 +38,6 @@
    <p>
    <%= "解説："%><%= @questions.commentary %>
 </div>
+<%= link_to'戻る',questions_path,class:'btn btn-sm btn-outline-secondary'%>
 </div>
 </div>
