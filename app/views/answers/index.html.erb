@@ -8,8 +8,19 @@
 <a class="btn btn-sm btn-outline-third" href="/answers/new">新規投稿</a>
   </div>
 <p>
+<h1>回答受付中のQ&A</h1>
+<% @answer.each do |answer| %>
+
+
+<%= link_to answer.title,answer_path(answer.id) %>
+<%= answer.question %>
+
+<%= answer.category.name %>
+<% end %>
+
+<h1>解決済みのQ&A</h1>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       
        <div class="col">
       <div class="card shadow-sm">
-   <%= "問." %>
+  

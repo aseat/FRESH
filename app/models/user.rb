@@ -9,6 +9,7 @@ class User < ApplicationRecord
     end
   end
   has_many :ways
+  has_many :answers
   has_one_attached :image
   has_many :likes
   has_many :waycomments

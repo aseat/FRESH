@@ -12,6 +12,8 @@
 </div>
      <p>
  <div class="d-flex justify-content-between align-items-center">
+
+<% if user_signed_in? && current_user.id = @question.user.id %>
 <%= form_with model: [@question,@choice], local: true do |f|%>
      <div class="btn-group">
     
@@ -21,7 +23,8 @@
      </div>             
 <% end %>
 
-     <% if user_signed_in? && current_user.id == @question.user.id %> 
+<% else %>
+      
              
      <div class="btn-group">
       <%= link_to '編集', edit_question_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
