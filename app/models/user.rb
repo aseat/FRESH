@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :waycomments
   has_many :questions, dependent: :destroy
-  has_many :choices, dependent: :destroy
+  
   with_options presence: true do
     validates :nickname
     validates :text

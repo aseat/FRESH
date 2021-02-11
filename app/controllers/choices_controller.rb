@@ -1,7 +1,6 @@
 class ChoicesController < ApplicationController
   before_action :authenticate_user!
  def index
-  
   @questions = Question.find_by(id: params[:question_id])
   @choice = Choice.last
  end
@@ -16,9 +15,8 @@ class ChoicesController < ApplicationController
       @questions = @question.choices
       render "questions/show"
     end
-  
   end
-  
+
   private
      def choice_params
       params.require(:choice).permit(:choose_id).merge(user_id: current_user.id, question_id: params[:question_id])

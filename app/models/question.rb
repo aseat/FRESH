@@ -3,7 +3,7 @@ class Question < ApplicationRecord
   belongs_to :answerd
   belongs_to :category
   belongs_to :user
-  belongs_to :choice, dependent: :destroy
+  
   has_one_attached :image
   with_options presence: true do
     validates :problem

@@ -41,7 +41,7 @@ class AnswersController < ApplicationController
   def destroy
     if current_user.id == @answer.user.id
       @answer.destroy
-      redirect_to answer_path(@answer.id)
+      redirect_to answers_path
     else
       render :new
     end

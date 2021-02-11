@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_131148) do
+ActiveRecord::Schema.define(version: 2021_02_11_073108) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -85,6 +85,16 @@ ActiveRecord::Schema.define(version: 2021_02_04_131148) do
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
+  create_table "responses", charset: "utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "answer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_responses_on_answer_id"
+    t.index ["user_id"], name: "index_responses_on_user_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
@@ -137,6 +147,8 @@ ActiveRecord::Schema.define(version: 2021_02_04_131148) do
   add_foreign_key "likes", "users"
   add_foreign_key "likes", "ways"
   add_foreign_key "questions", "users"
+  add_foreign_key "responses", "answers"
+  add_foreign_key "responses", "users"
   add_foreign_key "waycomments", "users"
   add_foreign_key "waycomments", "ways"
   add_foreign_key "ways", "users"

@@ -7,6 +7,8 @@
 
 <%= @answer.category.name %>
 
+
+
 <% if user_signed_in? && current_user.id = @answer.user.id %>
      <div class="btn-group">
       <%= link_to '編集', edit_answer_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
@@ -14,3 +16,4 @@
      </div>
      <% else %>
      <% end %>
+

@@ -10,4 +10,13 @@ class CreateQuestions < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
+
+  def up
+    Question.destroy_all
+    add_reference :questions, :user, null: false, show: true
+  end
+
+  def down
+    remove_reference :questions, :user, show: true
+  end
 end
