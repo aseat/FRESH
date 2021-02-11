@@ -7,12 +7,10 @@
 
 <%= @answer.category.name %>
 
-
-<% else %>
-      
-             
+<% if user_signed_in? && current_user.id = @answer.user.id %>
      <div class="btn-group">
-      <%= link_to '編集', edit_question_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
-     <%= link_to '削除', question_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
+      <%= link_to '編集', edit_answer_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
+     <%= link_to '削除', answer_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
      </div>
+     <% else %>
      <% end %>
