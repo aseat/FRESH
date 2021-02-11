@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     resources :choices, only: [:index,:create]
   end
 
-  resources :answers
-  
+  resources :answers do
+    resources :responses, only: [:create]
+  end
+
   resources :words
 end

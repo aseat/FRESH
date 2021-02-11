@@ -26,7 +26,8 @@ class AnswersController < ApplicationController
 
   
   def show
-    
+    @response = Response.new
+    @responses = @answer.responses.includes(:user).order('created_at DESC')
 
   end
 

@@ -7,7 +7,26 @@
 
 <%= @answer.category.name %>
 
+<%= form_with model: [@answer,@response], local: true do |f|%>
+     <div class="btn-group">
+    <%= f.label :text, "コメント" %><br />
+    <%= f.text_area :text,id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
+ <p>
+     <%= f.submit '答える', class:'btn btn-sm btn-outline-secondary' %>
+     </div>   
+     <p>          
+<% end %>
 
+<% @responses.each do |response| %>
+     
+          <div class="btn-group">
+               <% if @responses %>
+               <%= response.text %>
+               </div>
+               <% end %>
+               <% end %>
+
+<p>
 
 <% if user_signed_in? && current_user.id = @answer.user.id %>
      <div class="btn-group">
