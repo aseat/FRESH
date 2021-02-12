@@ -1,4 +1,5 @@
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= render "devise/shared/header" %>
+<%#= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 <div class="field">
 <label>ニックネーム</label><br />
 <%= f.text_field :nickname,id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
@@ -36,4 +37,5 @@
   </div>
 
 <p>
-<% end %>
+
+
