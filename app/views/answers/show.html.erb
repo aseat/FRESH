@@ -17,16 +17,7 @@
      <p>          
 <% end %>
 
-<% @responses.each do |response| %>
-     
-          <div class="btn-group">
-               <% if @responses %>
-               <%= response.text %>
-               </div>
-               <% end %>
-               <% end %>
 
-<p>
 
 <% if user_signed_in? && current_user.id = @answer.user.id %>
      <div class="btn-group">
@@ -35,4 +26,17 @@
      </div>
      <% else %>
      <% end %>
+     <p>
+
+<div class="btn-group">
+<h1>コメント一覧</h1>
+<br>
+<% @responses.each do |response| %>
+     
+          
+               <% if @responses %>
+               <%= response.text %>
+               </div>
+               <% end %>
+               <% end %>
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
  
   root to: "concretes#index"
+  resources :users
   resources :ways do
   resources :likes, only: [:create, :destroy]
   resources :waycomments, only: [:create, :destroy]

@@ -1,19 +1,19 @@
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 <div class="field">
 <label>ニックネーム</label><br />
-<%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+<%= f.text_field :nickname,id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
 </div>
 
   <div class="field">
     <label>メールアドレス</label><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email,id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
   </div>
 
   <div>
 
 <div class="field">
 <label>自己紹介</label><br />
-<%= f.text_area :text, autofocus: true, autocomplete: "text" %>
+<%= f.text_area :text, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
 </div>
 
   <div class="field">
@@ -21,12 +21,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
   </div>
 
   <div class="field">
     <label>パスワード (確認)</label><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
   </div>
 
 <div>
