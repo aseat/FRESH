@@ -13,7 +13,7 @@
             
 <div class="card-body">
           <div class="card-text">
-          <%#= image_tag @way.user.image %><%= @way.user.nickname %>
+          <%= @way.user.nickname %>
           </div>
         <p>
            <p class="card-text">
@@ -38,7 +38,7 @@
   </div>
 
        <div class="card-body">
-               <% if user_signed_in? && current_user.id == @way.user_id %>
+               <% if user_signed_in? && current_user.id != @way.user_id %>
            <%= form_with model: [@way,@waycomment], local: true do |f|%>
               <div class="field form-group">
                <%= f.label :text, "コメント" %><br />
@@ -54,13 +54,11 @@
         <ul class="comments_lists">
          <%='コメント一覧'%>
         <% @waycomments.each do |waycomment| %>
+            <% if @waycomments %>
             <li class="card-text">
               
-               <%= @waycomment.text %>
+               <%= waycomment.text %>
           </li> 
                <% end %>
+               <% end %>
        </div>
-
-             
-              
-  

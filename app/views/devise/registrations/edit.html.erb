@@ -6,7 +6,42 @@
 
 <div>
 
-<%= render "devise/shared/users", resource: resource %>
+<div class="field">
+<label>ニックネーム</label><br />
+<%= f.text_field :nickname,id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
+</div>
+
+  <div class="field">
+    <label>メールアドレス</label><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control" %>
+  </div>
+
+  <div>
+
+<div class="field">
+<label>自己紹介</label><br />
+<%= f.text_area :text, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
+</div>
+
+  <div class="field">
+    <label>パスワード</label>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> 文字以上)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "current-password" ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <label>パスワード (確認)</label><br />
+    <%= f.password_field :password_confirmation, autocomplete: "current-password" ,class:"form-control"%>
+  </div>
+
+<div>
+  <div class="field">
+    <label>プロフィール画像</label><br />
+    <%= f.file_field :image, id:"inputFile" %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "更新" %>

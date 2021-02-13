@@ -26,7 +26,7 @@ class WaysController < ApplicationController
 
   def show
     @waycomment = Waycomment.new
-    @waycomments = @way.waycomments.includes(:user)
+    @waycomments = @way.waycomments.includes(:user).order('created_at DESC')
   end
 
   def update

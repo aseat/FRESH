@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    passwords: 'users/passwords'
-  }
+  devise_for :users
   get "users/show" => "users#show"
 
   devise_scope :user do

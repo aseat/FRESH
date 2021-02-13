@@ -8,6 +8,7 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
+  
   has_many :ways
   has_many :answers
   has_many :words
@@ -20,5 +21,6 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname
     validates :text
+    validates :password, on: :create
   end
 end

@@ -22,7 +22,7 @@
 <% end %>
             <% if way.image.attached? %>
             <%= link_to image_tag(way.image,class:"bd-placeholder-img card-img-top",width:"100%",height:"300px"),way_path(way.id) %>
-          　<% end %>
+          <% end %>
       <div class="card-body">
           <p class="card-text">
           <%= link_to way.name,way_path(way.id) %>
@@ -32,7 +32,7 @@
              <%= way.text %>
              </p>
    <div class="d-flex justify-content-between align-items-center">
-                 <small class="text-muted"><%= l way.created_at %></small>
+                 <small class="text-muted"><%= l way.created_at %></small><small class="text-muted"><%=link_to way.user.nickname,users_show_path(way.user.id) %></small>
 
 </div>
 </div>
