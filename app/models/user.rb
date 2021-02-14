@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :words
   has_many :responses
   has_one_attached :image
-  has_many :likes
+  has_many :likes,dependent: :destroy
   has_many :waycomments
   has_many :questions, dependent: :destroy
   

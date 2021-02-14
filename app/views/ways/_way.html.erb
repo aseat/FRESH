@@ -1,9 +1,11 @@
 <% if @way.liked_by(current_user).present? %>
-          <%= link_to(way_like_path(@way.id, @way.liked_by(current_user)), method: :DELETE, remote: true, class: "liked") do %>
+          <%= link_to(way_like_path(@way.id, @way.liked_by(current_user)), method: :DELETE, remote: true, id: :"way_#{@way.id}") do %>
             <i class="btn btn-sm btn-outline-secondary">いいねを外す</i>
           <% end %>
+          <%= @way.likes.count %> イイね！
         <% else %>
-          <%= link_to(way_likes_path(@way), method: :POST, remote: true, class: "like") do %>
+          <%= link_to(way_likes_path(@way), method: :POST, remote: true, id: :"way_#{@way.id}") do %>
             <i class="btn btn-sm btn-outline-secondary">いいね</i>
           <% end %>
+          <%= @way.likes.count %> イイね！
         <% end %>

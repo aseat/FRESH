@@ -1,4 +1,5 @@
 <%= render "devise/shared/header" %>
+ <body>
  <div class="col">
       <div class="card shadow-sm">
            
@@ -19,8 +20,13 @@
            <p class="card-text">
              <%= @way.text %>
              </p>
-        <tr id= "way_<%= @way.id %>">
+
+        <tr>
+        <td>
+        <div id= "way_<%= @way.id %>">
         <%= render "way", post: @way %>
+        </div>
+</td>
              </tr>
 </div>
 
@@ -62,3 +68,4 @@
                <% end %>
                <% end %>
        </div>
+</body>
