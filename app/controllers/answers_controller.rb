@@ -1,9 +1,14 @@
 class AnswersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-
+  before_action :search_product, only: [:index, :search]
   def index
+    @answers = Answer.all
     @answer = Answer.includes(:user).order('created_at DESC')
+  end
+
+  def search
+    @results = @p.result.includes(:category_id)  
   end
 
   def new
@@ -11,7 +16,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.create(answer_params)
+    @answer = Answer.create!(answer_params)
 
     if @answer.save
     redirect_to answers_path
@@ -48,6 +53,8 @@ class AnswersController < ApplicationController
     end
   end
 
+ 
+
   private
 
   def answer_params
@@ -56,6 +63,12 @@ class AnswersController < ApplicationController
 
   def set_answer
     @answer = Answer.find(params[:id])
+  end
+
+  private
+
+  def search_product
+    @p = Answer.ransack(params[:q])  
   end
 
 

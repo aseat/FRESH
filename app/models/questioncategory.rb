@@ -1,2 +1,0 @@
-class Questioncategory < ApplicationRecord
-end

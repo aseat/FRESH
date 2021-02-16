@@ -1,6 +1,7 @@
 class Answer < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
+  belongs_to :answercategory
   belongs_to :category
   has_many :responses, dependent: :destroy
   has_one_attached :image

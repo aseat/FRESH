@@ -1,11 +1,17 @@
 <%= render "devise/shared/header" %>
 
 <div class="input-group">
-	<input type="text" class="form-control">
-
+	
+<%= search_form_for @p, url: answers_search_path do |f| %>
   
-  <a class="btn btn-sm btn-outline-third" href="#">検索</a>
-<a class="btn btn-sm btn-outline-third" href="/answers/new">新規投稿</a>
+  <%= f.collection_select :category_id_eq, @answers, :name, :name,  include_blank: '指定なし',class:"form-control" %>
+  
+  <%= f.submit '検索',class:"btn btn-sm btn-outline-third" %>
+  <%= link_to"新規投稿",new_answer_path,class:"btn btn-sm btn-outline-third"%>
+<% end %>
+  
+
+
   </div>
 <p>
 <h1>回答受付中のQ&A</h1>

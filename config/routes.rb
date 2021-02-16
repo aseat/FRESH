@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :answers do
     resources :responses, only: [:create]
   end
+  get 'answers/search'
 
   resources :words
 end
