@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
-  devise_for :users
   get "users/show" => "users#show"
+  devise_for :users
+  
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
@@ -18,10 +19,11 @@ Rails.application.routes.draw do
     resources :choices, only: [:index,:create]
   end
 
+  get 'answers/search'
   resources :answers do
     resources :responses, only: [:create]
   end
-  get 'answers/search'
+  
 
   resources :words
 end

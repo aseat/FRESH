@@ -1,14 +1,19 @@
 class AnswersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_action :search_product, only: [:index, :search]
+  before_action :search_product, only: [:index, :search, :shadow_search]
   def index
     @answers = Answer.all
+    set_answer_column   
     @answer = Answer.includes(:user).order('created_at DESC')
   end
 
+  def shadow_search
+    @search = Answer.all
+  end
+
   def search
-    @results = @p.result.includes(:category_id)  
+    @results = @p.result.includes(:category_id)
   end
 
   def new
@@ -65,10 +70,13 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
   end
 
-  private
 
   def search_product
     @p = Answer.ransack(params[:q])  
+  end
+
+  def set_answer_column
+   @answer_category = Answer.select(:category_id).distinct 
   end
 
 
