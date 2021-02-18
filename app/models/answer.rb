@@ -5,7 +5,7 @@ class Answer < ApplicationRecord
   belongs_to :category
   has_many :responses, dependent: :destroy
   has_one_attached :image
-  has_many :answercategory
+  belongs_to :answercategory, dependent: :destroy
   with_options presence: true do
     validates :title
     validates :question

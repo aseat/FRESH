@@ -19,11 +19,11 @@ Rails.application.routes.draw do
     resources :choices, only: [:index,:create]
   end
 
-  get 'answers/search'
+
   resources :answers do
     resources :responses, only: [:create]
   end
-  
+   get 'answers/search' 
 
   resources :words
 end

@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
   before_action :search_product, only: [:index, :search, :shadow_search]
   def index
     @answers = Answer.all
-    set_answer_column   
+    set_category_column
     @answer = Answer.includes(:user).order('created_at DESC')
   end
 
@@ -75,8 +75,8 @@ class AnswersController < ApplicationController
     @p = Answer.ransack(params[:q])  
   end
 
-  def set_answer_column
-   @answer_category = Answer.select(:category_id).distinct 
+  def set_category_column
+   @answer_category = Answer.select(:name).distinct 
   end
 
 
