@@ -20,10 +20,11 @@ Rails.application.routes.draw do
   end
 
 
+  get 'answers/search', to:'answers#search' 
   resources :answers do
     resources :responses, only: [:create]
   end
-   get 'answers/search' 
+   
 
   resources :words
 end

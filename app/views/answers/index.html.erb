@@ -4,7 +4,7 @@
 	
 <%= search_form_for @p, url: answers_search_path do |f| %>
   
-  <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+  <%= f.collection_select :category_id_eq, Category.all, :id, :name,class:"form-control" %>
   
   <%= f.submit '検索',class:"btn btn-sm btn-outline-third" %>
   <%= link_to"新規投稿",new_answer_path,class:"btn btn-sm btn-outline-third"%>
@@ -15,6 +15,7 @@
   </div>
 <p>
 <h1>回答受付中のQ&A</h1>
+<% if @answers.length !=0 %>
 <% @answer.each do |answer| %>
 
 
@@ -22,6 +23,7 @@
 <%= answer.question %>
 
 <%= answer.category.name %>
+<% end %>
 <% end %>
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
