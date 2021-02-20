@@ -1,5 +1,4 @@
 <%= render "devise/shared/header" %>
-
 <div class="album py-5 bg-light">
 <%= form_with(url: search_ways_path, local: true, method: :get, class: "form-control") do |form| %>
 
@@ -10,7 +9,9 @@
 <p>
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <% @way.each do |way| %>
+<% if @ways.length !=0 %>
+ 
+      <% @ways.each do |way| %>
       <div class="col">
         <div class="card shadow-sm">
           <% if way.video.attached? %>
@@ -38,6 +39,11 @@
         </div>
       </div>
       <% end %>
-    </div>
-  </div>
+<% else %>
+<h1>検索結果なし</h1>
+<% end %>
 </div>
+<p>
+<div class="d-flex justify-content-between align-items-center">
+
+<%= link_to '戻る', ways_path,class:"btn btn-sm btn-outline-third" %>

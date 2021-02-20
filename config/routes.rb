@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   root to: "concretes#index"
   
   resources :ways do
+    collection do
+      get 'search'
+    end
   resources :likes, only: [:create, :destroy]
   resources :waycomments, only: [:create, :destroy]
   end
@@ -26,5 +29,10 @@ Rails.application.routes.draw do
   end
    
 
-  resources :words
+  resources :words do
+    collection do
+      get 'search'
+    end
+  end
+
 end

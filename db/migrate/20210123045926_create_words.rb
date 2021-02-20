@@ -5,6 +5,7 @@ class CreateWords < ActiveRecord::Migration[6.1]
       t.string :yomi, null:false
       t.text :mean, null: false
       t.references :user, null:false, foreign_key: true
+      t.references :answercategory null:false, foreign_key: true
       t.timestamps
     end
   end

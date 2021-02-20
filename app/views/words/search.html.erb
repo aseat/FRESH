@@ -8,9 +8,15 @@
 <p>
 <div class="col">
       <div class="card shadow-sm">
-<span style="font-size:30px; color:black; font-weight:bold;">あ行</span>
+
 <p>
-<% @word.each do |word| %>
+<% if @words.length !=0 %>
+<% @words.each do |word| %>
 <div class="card-text">
             <%= '・' %><%= link_to word.word,word_path(word.id) %>
 <% end %>
+<% else %>
+<h1>検索結果なし</h1>
+<% end %>
+<p>
+<%= link_to '戻る', words_path %>

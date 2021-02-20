@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
   def index
    @answer = Answer.includes(:user).order('created_at DESC')
    @answers = Answer.all
-    set_category_column
+   
   end
 
   
@@ -73,9 +73,7 @@ class AnswersController < ApplicationController
     @p = Answer.ransack(params[:q])  
   end
 
-  def set_category_column
-   @answer_category = Answer.all
-  end
+
 
 
 end

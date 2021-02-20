@@ -12,4 +12,12 @@ class Way < ApplicationRecord
     validates :name
     validates :text
   end
+
+  def self.search(search)
+    if search != ""
+      Way.where('name LIKE(?)', "%#{search}%")
+    else
+      Way.all
+    end
+  end
 end

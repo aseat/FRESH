@@ -6,6 +6,10 @@ class WaysController < ApplicationController
     @way = Way.includes(:user).order('created_at DESC')
   end
 
+  def search
+    @ways = Way.search(params[:keyword])
+  end
+
   def new
     @way = Way.new
   end
