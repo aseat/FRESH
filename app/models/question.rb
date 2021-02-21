@@ -3,8 +3,8 @@ class Question < ApplicationRecord
   belongs_to :answerd
   belongs_to :category
   belongs_to :user
-  
-  has_many :choice,dependent: :destroy
+
+  has_many :choice, dependent: :destroy
 
   has_one_attached :image
   with_options presence: true do

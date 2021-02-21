@@ -5,7 +5,7 @@
            
            
 
-<div class="card-body">
+<div class="card1-body">
         <p>
            <div class="card-text">
            <span style="font-size:30px; color:black; font-weight:bold;"><%= @word.word %></span><%= ' ('%><%= @word.yomi %><%= ')'%>
@@ -16,7 +16,7 @@
            <div class="bd-placeholder-img card-img-top">
            <% if @word.image.attached? %>
             <%= image_tag @word.image,width:"300px",height:"300px" %>
-          　<% end %>
+          <% end %>
      <p>
      <div class="d-flex justify-content-between align-items-center">
               

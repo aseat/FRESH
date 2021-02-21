@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.create!(question_params)
     if @question.save
-    redirect_to questions_path
+      redirect_to questions_path
     else
       render :new
     end
@@ -23,10 +23,8 @@ class QuestionsController < ApplicationController
     redirect_to action: :index unless @question.user.id == current_user.id
   end
 
-  
   def show
     @choice = Choice.new
-
   end
 
   def update
@@ -45,7 +43,6 @@ class QuestionsController < ApplicationController
       render :new
     end
   end
-  
 
   private
 
@@ -56,6 +53,4 @@ class QuestionsController < ApplicationController
   def set_question
     @question = Question.find(params[:id])
   end
-
-
 end

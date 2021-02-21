@@ -8,7 +8,7 @@ class Word < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Word.where('word LIKE(?)', "%#{search}%")
     else
       Word.all

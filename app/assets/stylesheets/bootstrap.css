@@ -91,6 +91,10 @@ h1, .h1 {
   }
 }
 
+h3, .h3 {
+  font-size: 2rem;
+}
+
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
 }
@@ -2161,6 +2165,26 @@ progress {
   color: #6c757d;
 }
 
+.form-control2 {
+  height: 200px;
+  width: 500px;
+  display: block;
+box-sizing: 500px;
+  
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 .form-control1 {
   height: 35px;
   width: 290px;
@@ -4202,6 +4226,27 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+}
+.card1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  
+  border-radius: 0.25rem;
+}
+
+.card2 {
+  position: relative;
+  margin: 2em auto;
+  padding: 1em;
+  width: 100%;
+  color: #000;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
 }
 .card > hr {
   margin-right: 0;

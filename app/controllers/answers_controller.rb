@@ -3,12 +3,9 @@ class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
   before_action :search_answer, only: [:index, :search]
   def index
-   @answer = Answer.includes(:user).order('created_at DESC')
-   @answers = Answer.all
-   
+    @answer = Answer.includes(:user).order('created_at DESC')
+    @answers = Answer.all
   end
-
-  
 
   def search
     @results = @p.result
@@ -22,7 +19,7 @@ class AnswersController < ApplicationController
     @answer = Answer.create!(answer_params)
 
     if @answer.save
-    redirect_to answers_path
+      redirect_to answers_path
     else
       render :new
     end
@@ -32,11 +29,9 @@ class AnswersController < ApplicationController
     redirect_to action: :index unless @answer.user.id == current_user.id
   end
 
-  
   def show
     @response = Response.new
     @responses = @answer.responses.includes(:user).order('created_at DESC')
-
   end
 
   def update
@@ -56,8 +51,6 @@ class AnswersController < ApplicationController
     end
   end
 
- 
-
   private
 
   def answer_params
@@ -68,12 +61,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
   end
 
-
   def search_answer
-    @p = Answer.ransack(params[:q])  
+    @p = Answer.ransack(params[:q])
   end
-
-
-
-
 end

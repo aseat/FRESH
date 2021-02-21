@@ -1,13 +1,11 @@
 class WordsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_word, only: [:show, :edit, :update, :destroy]
- 
 
   def index
     @word = Word.includes(:user).order('yomi')
-    
   end
-  
+
   def search
     @words = Word.search(params[:keyword])
   end
@@ -59,6 +57,4 @@ class WordsController < ApplicationController
   def set_word
     @word = Word.find(params[:id])
   end
-
- 
 end

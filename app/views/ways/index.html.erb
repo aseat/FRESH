@@ -1,13 +1,11 @@
 <%= render "devise/shared/header" %>
-
 <div class="album py-5 bg-light">
-<%= form_with(url: search_ways_path, local: true, method: :get, class: "form-control") do |form| %>
-
- <%= form.text_field :keyword, placeholder: "試験名を検索する", class: "search-input" %>
+  <%= form_with(url: search_ways_path, local: true, method: :get, class: "form-control") do |form| %>
+  <%= form.text_field :keyword, placeholder: "試験名を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "btn btn-sm btn-outline-third" %>
   <%= link_to"新規投稿",new_way_path,class:"btn btn-sm btn-outline-third"%>
-<% end %>
-<p>
+  <% end %>
+  <p>
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <% @way.each do |way| %>
@@ -21,17 +19,24 @@
           <% end %>
           <div class="card-body">
             <p class="card-text">
-           <%= "試験名: " %><%= link_to way.name,way_path(way.id) %>
+            <%= "試験名: " %>
+            <%= link_to way.name,way_path(way.id) %>
             </p>
             <p class="card-text">
-            <%= "説明文: " %><%= way.text %>
+            <%= "説明文: " %>
+            <%= way.text %>
             </p>
             <div class="d-flex justify-content-between align-items-center">
               <small class="text-muted">
-                <%= "投稿日時: " %><%= l way.created_at %>
+                <%= "投稿日時: " %>
+                <%= l way.created_at %>
               </small>
               <small class="text-muted">
-                <%= "投稿者: " %><%=link_to way.user.nickname,users_show_path %>
+                <%= "投稿者: " %>
+                <% if way.user.image.attached? %>
+                <%=link_to image_tag(way.user.image,width:"30px",height:"30px",style:"border-radius: 50%"),users_show_path %>
+                <% end %>
+                <%=link_to way.user.nickname,users_show_path %>
               </small>
             </div>
           </div>

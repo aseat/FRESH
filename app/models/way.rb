@@ -14,7 +14,7 @@ class Way < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Way.where('name LIKE(?)', "%#{search}%")
     else
       Way.all
