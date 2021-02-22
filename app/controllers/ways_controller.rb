@@ -25,7 +25,17 @@ class WaysController < ApplicationController
   end
 
   def edit
-    redirect_to action: :index unless @way.user.id == current_user.id
+    unless @way.user.id == current_user.id
+      @way = Way.create(way_params)
+      if @way.save
+
+        redirect_to ways_path
+      else
+        render :edit
+      end
+
+    end
+
   end
 
   def show

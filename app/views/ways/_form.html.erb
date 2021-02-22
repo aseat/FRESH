@@ -1,32 +1,29 @@
- <%= form_with model: @way, local: true do |f| %>
-
-    <div class="field form-group">
-      <%= f.label :name, "試験名(必須)" %><br />
-       <%= f.file_field :name, id:"inputFile",class:"form-control" ,type:"text", id:"article_title" %>
-    </div>
-    <p>
+<%= form_with model: @way, local: true do |f| %>
+  <div class="field form-group">
+    <%= f.label :name, "試験名(必須)" %><br />
+      <%= f.text_area :name, id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+  </div>
+  <p>
     <div class="field form-group">
       <%= f.label :text, "説明、方法(必須)" %><br />
-    <%= f.text_area :text, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
+        <%= f.text_area :text, id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
     </div>
-
-  
-<p>
-<div class="field">
-    <%= f.label :image, "画像(任意)" %><br />
-    <%= f.file_field :image, id:"inputFile" %>
-  </div>
-<p>
-  <div class="field">
-    <%= f.label :video, "動画(任意)" %><br />
-    <%= f.file_field :video, id:"inputFile" %>
-  </div>
-  
-<p>
-    <div class="actions text-right">
-      <%= f.submit "投稿する",class:"btn-default red-round-btn"%>
-     </div>
-     <p>
-     </p>
-    <%=link_to 'キャンセル', ways_path, class:"btn-default cancel-round-btn" %>
-<% end %> 
+    <p>
+      <div class="field">
+        <%= f.label :image, "画像(任意)" %><br />
+          <%= f.file_field :image, id:"inputFile" %>
+      </div>
+      <p>
+        <div class="field">
+          <%= f.label :video, "動画(任意)" %><br />
+            <%= f.file_field :video, id:"inputFile" %>
+        </div>
+        <p>
+          <div class="actions text-right">
+            <%= f.submit "投稿する",class:"btn btn-sm btn-outline-secondary"%>
+          </div>
+          <p>
+            <div class="actions text-right">
+              <%=link_to 'キャンセル', ways_path, class:"btn btn-sm btn-outline-secondary" %>
+            </div>
+            <% end %>

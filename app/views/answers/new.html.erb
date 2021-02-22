@@ -1,7 +1,7 @@
 <%= render "devise/shared/header" %>
 
 <body>
-  <div class=container>
+  <div class=container style="padding-left: 475px;padding-top: 10px;">
   <h2>Q&A 投稿</h2>
   <div class='form-wrapper'>
  <%= form_with model: @answer, local: true do |f| %>
@@ -28,11 +28,11 @@
   </div>
 <p>
   <div class="actions text-right">
-      <%= f.submit "投稿する",class:"btn-default red-round-btn"%>
+      <%= f.submit "投稿する",class:"btn btn-sm btn-outline-secondary"%>
      </div>
      <p>
      </p>
-    <%=link_to 'キャンセル', answers_path, class:"btn-default cancel-round-btn" %>
+    <%=link_to 'キャンセル', answers_path, class:"btn btn-sm btn-outline-secondary" %>
    <% end %> 
 <p>
     

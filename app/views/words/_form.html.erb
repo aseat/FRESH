@@ -1,0 +1,27 @@
+<%= form_with model: @word, local: true do |f| %>
+  <%#= render 'devise/shared/error_messages', model: f.object %>
+    <div class="field form-group">
+      <%= f.label :word, "用語(必須)" %><br />
+        <%= f.text_area :word, id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+    </div>
+    <p>
+      <div class="field form-group">
+        <%= f.label :yomi, "読み ひらがな、カタカナ(全角) 必須" %><br />
+          <%= f.text_area :yomi, id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+      </div>
+      <p>
+        <div class="field form-group">
+          <%= f.label :mean, "意味(必須)" %><br />
+            <%= f.text_area :mean, id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+        </div>
+        <p>
+          <div class="field"> <label>画像(任意)</label><br />
+            <%= f.file_field :image, id:"inputFile" %>
+          </div>
+          <p>
+            <div class="actions text-right">
+              <%= f.submit "投稿する",class:"btn btn-sm btn-outline-secondary"%>
+            </div>
+            <p> </p>
+            <%=link_to 'キャンセル', words_path, class:"btn btn-sm btn-outline-secondary" %>
+              <% end %>

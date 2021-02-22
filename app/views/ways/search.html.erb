@@ -1,49 +1,50 @@
 <%= render "devise/shared/header" %>
 <div class="album py-5 bg-light">
 <%= form_with(url: search_ways_path, local: true, method: :get, class: "form-control") do |form| %>
-
- <%= form.text_field :keyword, placeholder: "試験名を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "btn btn-sm btn-outline-third" %>
-  <%= link_to"新規投稿",new_way_path,class:"btn btn-sm btn-outline-third"%>
+<%= form.text_field :keyword, placeholder: "試験名を検索する", class: "search-input" %>
+<%= form.submit "検索", class: "btn btn-sm btn-outline-third" %>
+<%= link_to"新規投稿",new_way_path,class:"btn btn-sm btn-outline-third"%>
 <% end %>
 <p>
-  <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<div class="container">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 <% if @ways.length !=0 %>
- 
-      <% @ways.each do |way| %>
-      <div class="col">
-        <div class="card shadow-sm">
-          <% if way.video.attached? %>
-          <%= link_to "クリックすると動画が見れます",way_path(way.id)%>
-          <% end %>
-          <% if way.image.attached? %>
-          <%= link_to image_tag(way.image,class:"bd-placeholder-img card-img-top",width:"100%",height:"300px"),way_path(way.id) %>
-          <% end %>
-          <div class="card-body">
-            <p class="card-text">
-           <%= "試験名: " %><%= link_to way.name,way_path(way.id) %>
-            </p>
-            <p class="card-text">
-            <%= "説明文: " %><%= way.text %>
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
-              <small class="text-muted">
-                <%= "投稿日時: " %><%= l way.created_at %>
-              </small>
-              <small class="text-muted">
-                <%= "投稿者: " %><%=link_to way.user.nickname,users_show_path %>
-              </small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
+<% @ways.each do |way| %>
+<div class="col">
+<div class="card shadow-sm">
+<% if way.video.attached? %>
+<%= link_to "クリックすると動画が見れます",way_path(way.id)%>
+<% end %>
+<% if way.image.attached? %>
+<%= link_to image_tag(way.image,class:"bd-placeholder-img card-img-top",width:"100%",height:"300px"),way_path(way.id) %>
+<% end %>
+<div class="card-body">
+<p class="card-text">
+<%= "試験名: " %>
+<%= link_to way.name,way_path(way.id) %>
+</p>
+<p class="card-text">
+<%= "説明文: " %>
+<%= way.text %>
+</p>
+<div class="d-flex justify-content-between align-items-center">
+<small class="text-muted">
+  <%= "投稿日時: " %>
+  <%= l way.created_at %>
+</small>
+<small class="text-muted">
+  <%= "投稿者: " %>
+  <%=link_to way.user.nickname,users_show_path %>
+</small>
+</div>
+</div>
+</div>
+</div>
+<% end %>
 <% else %>
 <h1>検索結果なし</h1>
 <% end %>
 </div>
 <p>
 <div class="d-flex justify-content-between align-items-center">
-
 <%= link_to '戻る', ways_path,class:"btn btn-sm btn-outline-third" %>

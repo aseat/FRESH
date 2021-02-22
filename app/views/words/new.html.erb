@@ -1,36 +1,5 @@
 <%= render "devise/shared/header" %>
-
-
-  <div class=container>
-  <h2>建築用語 新規投稿</h2>
-  <div class='form-wrapper'>
-  <%= form_with model: @word, local: true do |f| %>
-<%#= render 'devise/shared/error_messages', model: f.object %>
-     <div class="field form-group">
-      <%= f.label :word, "用語(必須)" %><br />
-       <%= f.file_field :word, id:"inputFile",class:"form-control" ,type:"text", id:"article_title" %>
-    </div>
-    <p>
-    <div class="field form-group">
-      <%= f.label :yomi, "読み(ひらがな、カタカナ(全角) 必須)" %><br />
-    <%= f.file_field :yomi, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
-    </div>
-<p>
-<div class="field form-group">
-      <%= f.label :mean, "意味(必須)" %><br />
-    <%= f.text_area :mean, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
-    </div>
-<p>
-<div class="field">
-    <label>プロフィール画像(任意)</label><br />
-    <%= f.file_field :image, id:"inputFile" %>
-  </div>
-  
-<p>
-    <div class="actions text-right">
-      <%= f.submit "投稿する",class:"btn-default red-round-btn"%>
-     </div>
-     <p>
-     </p>
-    <%=link_to 'キャンセル', words_path, class:"btn-default cancel-round-btn" %>
-     <% end %>
+  <div class=container style="padding-left: 475px;padding-top: 10px;">
+    <h2>建築用語 新規投稿</h2>
+    <div class='form-wrapper'>
+      <%= render partial: "form", locals: { word: @word } %>

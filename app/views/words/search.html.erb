@@ -1,22 +1,22 @@
 <%= render "devise/shared/header" %>
-<p>
-<%= form_with(url: search_words_path, local: true, method: :get, class: "form-control") do |form| %>
- <%= form.text_field :keyword, placeholder: "用語を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "btn btn-sm btn-outline-third" %>
-  <%= link_to"新規投稿",new_word_path,class:"btn btn-sm btn-outline-third"%>
-<% end %>
-<p>
-<div class="col">
-      <div class="card shadow-sm">
-
-<p>
-<% if @words.length !=0 %>
-<% @words.each do |word| %>
-<div class="card-text">
-            <%= '・' %><%= link_to word.word,word_path(word.id) %>
-<% end %>
-<% else %>
-<h1>検索結果なし</h1>
-<% end %>
-<p>
-<%= link_to '戻る', words_path %>
+  <p>
+    <%= form_with(url: search_words_path, local: true, method: :get, class: "form-control") do |form| %>
+      <%= form.text_field :keyword, placeholder: "用語を検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "btn btn-sm btn-outline-third" %>
+          <%= link_to"新規投稿",new_word_path,class:"btn btn-sm btn-outline-third"%>
+            <% end %>
+              <p>
+                <div class="col" style="padding-left: 475px;padding-top: 10px;">
+                  <div class="card1 shadow-sm">
+                    <p>
+                      <% if @words.length !=0 %>
+                        <% @words.each do |word| %>
+                          <div class="card-text">
+                            <%= '・' %>
+                              <%= link_to word.word,word_path(word.id) %>
+                                <% end %>
+                                  <% else %>
+                                    <h1>検索結果なし</h1>
+                                    <% end %>
+                                      <p>
+                                        <%= link_to '戻る', words_path,class: "btn btn-sm btn-outline-secondary" %>
