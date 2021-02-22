@@ -1,23 +1,23 @@
 <%= render "devise/shared/header" %>
-  
-    </div>
-  </header>
-  <p>
-  </p>
-
-<p>
- <% @question.each do |question| %>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      
-       <div class="col">
-      <div class="card shadow-sm">
-   <%= "問."%><%= link_to question.problem,question_path(question.id) %> 
+  <%= form_with(url: search_questions_path, local: true, method: :get, class: "form-control") do |form| %>
+      <%= form.text_field :keyword, placeholder: "問題文を検索", class: "search-input" %>
+        <%= form.submit "検索", class: "btn btn-sm btn-outline-third" %>
+          <%= link_to"新規投稿",new_question_path,class:"btn btn-sm btn-outline-third"%>
+            <% end %>
+              <p>
      
-     <div>
-    <%= "カテゴリー："%><%= question.category.name %>
-     </div>
-     <p>
-</div>
-</div>
-</div>
-<% end %>
+      <% @question.each do |question| %>
+          <div class="col" style="padding-left: 280px;padding-top: 10px;width: 1200px;">
+            <div class="card shadow-sm">
+              <%= "問."%>
+                <%= link_to question.problem,question_path(question.id) %>
+                  <div>
+                    <%= "カテゴリー："%>
+                      <%= question.category.name %>
+                  </div>
+                  <p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <p>

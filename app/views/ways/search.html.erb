@@ -6,7 +6,7 @@
 <%= link_to"新規投稿",new_way_path,class:"btn btn-sm btn-outline-third"%>
 <% end %>
 <p>
-<div class="container">
+<div class="container" style="padding-left: 16px;">
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 <% if @ways.length !=0 %>
 <% @ways.each do |way| %>
@@ -34,6 +34,9 @@
 </small>
 <small class="text-muted">
   <%= "投稿者: " %>
+  <% if way.user.image.attached? %>
+ <%=link_to image_tag(way.user.image,width:"30px",height:"30px",style:"border-radius: 50%"),users_show_path %>
+ <% end %>
   <%=link_to way.user.nickname,users_show_path %>
 </small>
 </div>

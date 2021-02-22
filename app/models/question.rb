@@ -15,4 +15,11 @@ class Question < ApplicationRecord
     validates :category_id
     validates :answerd_id
   end
+  def self.search(search)
+    if search != ''
+      Question.where('problem LIKE(?)', "%#{search}%")
+    else
+      Question.all
+    end
+  end
 end

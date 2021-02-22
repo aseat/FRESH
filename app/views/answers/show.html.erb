@@ -1,42 +1,56 @@
 <%= render "devise/shared/header" %>
 
 <p>
-
+<div class="col" style="padding-left: 280px;padding-top: 10px;width: 1200px;">
+            <div class="card shadow-sm">
 <%= link_to @answer.title,answer_path(@answer.id) %>
 <%= @answer.question %>
 
 <%= @answer.category.name %>
+</div>
+</div>
 
-<%= form_with model: [@answer,@response], local: true do |f|%>
-     <div class="btn-group">
-    <%= f.label :text, "コメント" %><br />
-    <%= f.text_area :text,id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
- <p>
-     <%= f.submit '答える', class:'btn btn-sm btn-outline-secondary' %>
-     </div>   
-     <p>          
+
+<div class="album py-5 bg-light" style="width: 480px;height: 64px;padding-left: 280px;">
+<%= link_to '戻る', answers_path,class: "btn btn-sm btn-outline-secondary" %>
+<% if user_signed_in? && current_user.id == @answer.user.id %>
+<%= link_to '編集', edit_answer_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
+<%= link_to '削除', answer_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %>
 <% end %>
+</div>
+
+
+ <% if user_signed_in? && current_user.id != @answer.user_id %>
+                        <%= form_with model: [@answer,@response], local: true do |f|%>
+                          <div class="field form-group"> <br>
+                            <h3>
+                              <%= f.label :text, "コメント" %>
+                            </h3>
+                            <%= f.text_area :text,id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+                          </div>
+                          <div class="actions text-right">
+                            <%= f.submit "答える", class:"btn btn-sm btn-outline-secondary"  %>
+                          </div>
+                          <% end %>
+                            <% else %>
+                              <% end %>
+                               <br>
+
+</div>
 
 
 
-<% if user_signed_in? && current_user.id = @answer.user.id %>
-     <div class="btn-group">
-      <%= link_to '編集', edit_answer_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
-     <%= link_to '削除', answer_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
-     </div>
-     <% else %>
-     <% end %>
-     <p>
+<h2>コメント一覧</h2>
 
-<div class="btn-group">
-<h1>コメント一覧</h1>
-<br>
+<div class="col" style="width:850px;padding-left:16px;">
 <% @responses.each do |response| %>
      
-          
+          <div class="card2" style="word-break: break-all;">
                <% if @responses %>
                <%= response.text %>
                </div>
                <% end %>
                <% end %>
-<%= link_to '戻る', answers_path %>
+               </div>
+               </div>
+</div>

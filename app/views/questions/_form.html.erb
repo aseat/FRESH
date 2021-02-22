@@ -1,0 +1,39 @@
+<%= form_with model: @question, local: true do |f| %>
+<div class="field form-group">
+<%= f.label :category, "カテゴリー(必須)" %>
+<br />
+<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+</p>
+<p>
+<div class="field form-group">
+<%= f.label :problem, "問題文(必須)" %>
+<br />
+<%= f.text_area :problem, id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+</div>
+<p>
+<div class="field form-group">
+<%= f.label :commentary, "解説(必須)" %>
+<br />
+<%= f.text_area :commentary, id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+</div>
+<p>
+<div class="field form-group">
+<%= f.label :answerd, "答え(必須)" %>
+<br />
+<%= f.collection_select(:answerd_id, Answerd.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+</div>
+<p>
+<div class="field">
+<label>画像(任意)</label>
+<br />
+<%= f.file_field :image, id:"inputFile" %>
+</div>
+<p>
+<div class="actions text-right">
+<%= f.submit "投稿する",class:"btn btn-sm btn-outline-secondary"%>
+</div>
+<p>
+</p>
+<%=link_to 'キャンセル', questions_path, class:"btn btn-sm btn-outline-secondary" %>
+<% end %>
+<p>

@@ -1,44 +1,33 @@
 <%= render "devise/shared/header" %>
-
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      
-       <div class="col">
-      <div class="card shadow-sm">
-   <%= "問."%><%= @question.problem %> 
-  
-
+<div class="col" style="padding-left: 280px;padding-top: 10px;width: 1200px;">
+<div class="card shadow-sm">
+<%= "問."%>
+<%= @question.problem %>
 <div>
-
 </div>
-     <p>
- <div class="d-flex justify-content-between align-items-center">
-
+<p>
+<div class="d-flex justify-content-between align-items-center">
 <% if user_signed_in? && current_user.id != @question.user.id %>
 <%= form_with model: [@question,@choice], local: true do |f|%>
-     <div class="btn-group">
-    
-      <%= f.collection_select(:choose_id, Choose.all, :id, :name, {}, {class:"btn btn-sm btn-outline-secondary", id:"category"}) %>
- 
-     <%= f.submit '答える', class:'btn btn-sm btn-outline-secondary' %>
-     </div>             
+<div class="album py-5 bg-light" style="width: 240px;height: 64px;padding-left: 16px;">
+<%= f.collection_select(:choose_id, Choose.all, :id, :name, {}, {class:"btn btn-sm btn-outline-secondary", id:"category"}) %>
+<%= f.submit '答える', class:'btn btn-sm btn-outline-secondary' %>
+</div>
 <% end %>
-
-<% else %>
-      
-             
-     <div class="btn-group">
-      <%= link_to '編集', edit_question_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
-     <%= link_to '削除', question_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %> 
-     </div>
-     <% end %>
-   <%= "カテゴリー："%><%= @question.category.name %> 
-    </div>
-
-       
+<% end %>
+<%= "カテゴリー："%>
+<%= @question.category.name %>
+</div>
 <div>
 </div>
-
-
 </div>
+</div>
+</div>
+<div class="album py-5 bg-light" style="width: 480px;height: 64px;padding-left: 280px;">
+<%= link_to '戻る', questions_path,class: "btn btn-sm btn-outline-secondary" %>
+<% if user_signed_in? && current_user.id == @question.user.id %>
+<%= link_to '編集', edit_question_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
+<%= link_to '削除', question_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %>
+<% end %>
 </div>
 </div>

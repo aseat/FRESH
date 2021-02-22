@@ -4,35 +4,5 @@
   <div class=container style="padding-left: 475px;padding-top: 10px;">
   <h2>Q&A 編集</h2>
   <div class='form-wrapper'>
- <%= form_with model: @answer, local: true do |f| %>
-<div class="field form-group">
-<%= f.label :category, "カテゴリー(必須)" %><br />
-<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
-</p>
-   
-    <div class="field form-group">
-      <%= f.label :title, "タイトル(必須)" %><br />
-    <%= f.text_area :title, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
-    </div>
-    <p>
-    <div class="field form-group">
-      <%= f.label :question, "問題文(必須)" %><br />
-    <%= f.text_area :question, id:"inputFile",class:"form-control" ,type:"text", id:"article_title",rows:"5" %>
-    </div>
-   
- <p>
-
-<div class="field">
-    <label>画像(任意)</label><br />
-    <%= f.file_field :image, id:"inputFile" %>
-  </div>
-<p>
-  <div class="actions text-right">
-      <%= f.submit "編集する",class:"btn-default red-round-btn"%>
-     </div>
-     <p>
-     </p>
-    <%=link_to 'キャンセル', answers_path, class:"btn btn-sm btn-outline-secondary" %>
-   <% end %> 
-<p>
+<%= render partial: "form", locals: { answer: @answer } %>
     

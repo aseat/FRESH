@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   end
 
   resources :questions do
+    collection do
+      get 'search'
+    end
     resources :choices, only: [:index,:create]
   end
 

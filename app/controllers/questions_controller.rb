@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -8,6 +8,10 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+  end
+
+  def search
+    @questions = Question.search(params[:keyword])
   end
 
   def create

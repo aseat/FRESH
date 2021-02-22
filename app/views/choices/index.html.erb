@@ -1,84 +1,48 @@
 <%= render "devise/shared/header" %>
-
 <% if @questions.answerd.id == @choice.choose.id %>
-
-<h1>正解！</h1>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
- 
-       <div class="col">
-      <div class="card shadow-sm">
-    
-   <%= "問."%><%= @questions.problem %> 
-
-<div>
-</div>
-     <p>
- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-<div class="col">
-      <div class="card shadow-sm">
-   <%= "カテゴリー："%><%= @questions.category.name %> 
-    </div>
-    <p>
-    </p>
-    <div class="btn-group">
-  <%= current_user.nickname %><%= "さんの答え：" %><%= @choice.choose.name %> 
-       </div>
-<div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<h5>正解！</h5>
+<div class="col" style="padding-left: 280px;padding-top: 10px;width: 1200px;">
+<div class="card shadow-sm">
+<%= "問."%>
+<%= @questions.problem %>
 <p>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-<div class="col">
-      <div class="card shadow-sm">
-  <%= "正解 "%><%= @questions.answerd.name %>
-   <p>
-   <%= "解説："%><%= @questions.commentary %>
+<%= "カテゴリー："%>
+<%= @questions.category.name %>
+<p>
+<%= current_user.nickname %>
+<%= "さんの答え：" %>
+<%= @choice.choose.name %>
+<p>
+<%= "正解："%>
+<%= @questions.answerd.name %>
+<p>
+<%= "解説："%>
+<%= @questions.commentary %>
 </div>
 <%= link_to'戻る',questions_path,class:'btn btn-sm btn-outline-secondary'%>
 </div>
 </div>
-
 <% else %>
-<h1>残念！</h1>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
- 
-       <div class="col">
-      <div class="card shadow-sm">
-    
-   <%= "問."%><%= @questions.problem %> 
-
-<div>
-</div>
-     <p>
- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-<div class="col">
-      <div class="card shadow-sm">
-   <%= "カテゴリー："%><%= @questions.category.name %> 
-    </div>
-    <p>
-    </p>
-    <div class="btn-group">
-  <%= current_user.nickname %><%= "さんの答え：" %><%= @choice.choose.name %> 
-       </div>
-<div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<h6>残念！</h6>
+<div class="col" style="padding-left: 280px;padding-top: 10px;width: 1200px;">
+<div class="card shadow-sm">
+<%= "問."%>
+<%= @questions.problem %>
 <p>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-<div class="col">
-      <div class="card shadow-sm">
-  <%= "正解 "%><%= @questions.answerd.name %>
-   <p>
-   <%= "解説："%><%= @questions.commentary %>
+<%= "カテゴリー："%>
+<%= @questions.category.name %>
+<p>
+<%= current_user.nickname %>
+<%= "さんの答え：" %>
+<%= @choice.choose.name %>
+<p>
+<%= "正解："%>
+<%= @questions.answerd.name %>
+<p>
+<%= "解説："%>
+<%= @questions.commentary %>
 </div>
 <%= link_to'戻る',questions_path,class:'btn btn-sm btn-outline-secondary'%>
 </div>
 </div>
-
 <% end %>
