@@ -1,12 +1,12 @@
 <%= render "devise/shared/header" %>
-<div class="form-control" style="padding-left: 530px;">
-<%= search_form_for @p, url: answers_search_path  do |f| %>
+
+<%= search_form_for(@p, url: answers_search_path, class: "form-control5")  do |f| %>
 
 <%= f.collection_select :category_id_eq, Category.all, :id, :name %>
 <%= f.submit '検索',class:"btn btn-sm btn-outline-third" %>
 <%= link_to"新規投稿",new_answer_path,class:"btn btn-sm btn-outline-third"%>
 <% end %>
-</div>
+
 </div>
 <p>
 <h7>回答受付中のQ&A</h7>

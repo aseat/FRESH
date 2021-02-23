@@ -1,51 +1,58 @@
 <%= render "devise/shared/header" %>
 <p>
+<div class="hand">
 <h2>新規登録</h2>
 
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user, class: 'registration-main', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
 <div>
 
-<div class="field">
+<div class="field form-group">
 <label>ニックネーム</label><br />
 <%= f.text_area :nickname, id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
 </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label>メールアドレス</label><br />
     <%= f.email_field :email,id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
   </div>
 
   <div>
 
-<div class="field">
+<div class="field form-group">
 <label>自己紹介</label><br />
 <%= f.text_area :text,id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
 </div>
 
-  <div class="field">
+ <div class="field form-group">
     <label>パスワード</label>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
-    <%= f.password_field :password,id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+    <%= f.password_field :password,id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
   </div>
 
-  <div class="field">
+ <div class="field form-group">
     <label>パスワード (確認)</label><br />
-    <%= f.password_field :password_confirmation, id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+    <%= f.password_field :password_confirmation, id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
   </div>
-
+<p>
 <div>
-  <div class="field">
+  <div class="field form-group">
     <label>プロフィール画像</label><br />
     <%= f.file_field :image, id:"inputFile" %>
   </div>
-
+<p>
   <div class="actions">
-    <%= f.submit "新規登録" %>
+    <%= f.submit "新規登録",class:"btn btn-sm btn-outline-secondary" %>
+  <p>
   </div>
+  <p>
+  <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn btn-sm btn-outline-secondary" %>
+<p>
 <% end %>
 
 <%= render "devise/shared/links" %>
+<p>
+</div>
