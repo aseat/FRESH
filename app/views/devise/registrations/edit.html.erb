@@ -24,18 +24,7 @@
 <%= f.text_area :text,id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
 </div>
 
- <div class="field form-group">
-    <label>パスワード</label>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password,id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
-  </div>
-
- <div class="field form-group">
-    <label>パスワード (確認)</label><br />
-    <%= f.password_field :password_confirmation, id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
-  </div>
+ 
 <p>
 <div>
   <div class="field form-group">
@@ -48,10 +37,8 @@
   <p>
   </div>
   <p>
-  <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post,class:"btn btn-sm btn-outline-secondary" %>
-<p>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
 <p>
 </div>
