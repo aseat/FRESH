@@ -44,7 +44,7 @@
     </div>
     <div class="col" style="width:850px;">
       <div class="album py-5 bg-light" style="width: 240px;height: 64px;padding-left: 16px;">
-        <%= link_to '戻る', words_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
+        <%= link_to '戻る', ways_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
           <% if user_signed_in? && current_user.id == @way.user.id %>
             <%= link_to '編集', edit_way_path, method: :get, class: "btn btn-sm btn-outline-secondary" %>
               <%= link_to '削除', way_path, method: :delete, class:'btn btn-sm btn-outline-secondary' %>
