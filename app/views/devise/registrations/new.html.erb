@@ -3,7 +3,7 @@
 <div class="hand">
 <h2>新規登録</h2>
 
-<%= form_with model: @user, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user,url:answers_path, class: 'registration-main', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
 <div>
