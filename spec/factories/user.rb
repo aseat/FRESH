@@ -6,6 +6,7 @@ FactoryBot.define do
     password {password}
     password_confirmation {password}
     text { 'ああああ' }
+    
 
     after(:build) do |user|
       user.image.attach(io: File.open('app/assets/images/staff3.jpg'), filename: 'staff3.jpg')

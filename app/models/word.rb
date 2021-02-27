@@ -4,7 +4,7 @@ class Word < ApplicationRecord
   with_options presence: true do
     validates :mean
     validates :word
-    validates :yomi, format: { with: /[ぁ-んァ-ンー－]/, message: 'Full-width characters' }
+    validates :yomi, format: { with: /[ぁ-んァ-ンー－]/, message: 'はひらがな、カタカナ(全角)で入力してください' }
   end
 
   def self.search(search)
