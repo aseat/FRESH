@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get "users/show" => "users#show"
+  
   devise_for :users, controllers: {
     registrations: "users/registrations",
   }
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
  
   root to: "concretes#index"
   
+  resources :users, only: [:show,:edit]
+
   resources :ways do
     collection do
       get 'search'

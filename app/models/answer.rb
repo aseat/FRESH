@@ -10,7 +10,7 @@ class Answer < ApplicationRecord
     validates :title
     validates :question
   end
-  with_options numericality: { other_than: 1, message: 'Select' }, presence: true do
+  with_options numericality: { other_than: 1, message: 'を選択してください' }, presence: true do
     validates :category_id
   end
 end

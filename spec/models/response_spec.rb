@@ -1,5 +1,22 @@
 require 'rails_helper'
-
-RSpec.describe Response, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+ RSpec.describe Response, type: :model do
+  before do
+    @response = FactoryBot.build(:response)
+    sleep 0.1
+  end
+  describe '回答の登録' do
+    context '回答が登録できる時' do
+     it 'textが存在すれば登録できること' do
+      expect(@response).to be_valid
+     end
+    end
+    context '回答が登録できない時' do
+      it 'textが空では登録できないこと' do
+        @response.text = ''
+        @response.valid?
+        expect(@response.errors.full_messages).to include "Textを入力してください"
+      end
+     end
+  end
+  
+  end

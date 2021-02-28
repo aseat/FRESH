@@ -14,8 +14,6 @@ require 'rails_helper'
       expect(@word).to be_valid
      end
      
-     
-
      it 'yomiは全角カタカナで登録できる' do
       @word.yomi = 'ミ'
       expect(@word).to be_valid

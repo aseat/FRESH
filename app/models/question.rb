@@ -11,7 +11,7 @@ class Question < ApplicationRecord
     validates :problem
     validates :commentary
   end
-  with_options numericality: { other_than: 1, message: 'Select' }, presence: true do
+  with_options numericality: { other_than: 1, message: 'を選択してください' }, presence: true do
     validates :category_id
     validates :answerd_id
   end
