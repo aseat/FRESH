@@ -8,10 +8,45 @@
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
         
-          <h3 class="mb-0">人気のポスト</h3>
-          <div class="mb-1 text-muted">11/12</div>
-          <p class="card-text mb-auto">問.海岸環境が構造物に作用する厳しさは、海中＞飛沫帯＞海上大気中である。</p>
-          <a href="#" class="stretched-link">続きを見る</a>
+   
+   
+      <% @ways.each do |way| %>
+      <div class="col">
+        <div class="card shadow-sm">
+          <% if way.video.attached? %>
+          <%= link_to "クリックすると動画が見れます",way_path(way.id)%>
+          <% end %>
+          <% if way.image.attached? %>
+          <%= image_tag way.image,class:"bd-placeholder-img card-img-top",width:"100%",height:"300px" %>
+          <% end %>
+          <div class="card-body">
+            <p class="card-text">
+            <%= "試験名: " %>
+            <%= way.name %>
+            </p>
+            <p class="card-text">
+            <%= "説明文: " %>
+            <%= way.text %>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">
+                <%= "投稿日時: " %>
+                <%= l way.created_at %>
+              </small>
+              <small class="text-muted">
+                <%= "投稿者: " %>
+                <% if way.user.image.attached? %>
+                <%=link_to image_tag(way.user.image,width:"30px",height:"30px",style:"border-radius: 50%"),"/users/#{way.user.id}" %>
+                <% end %>
+                <%=link_to way.user.nickname,"/users/#{way.user.id}" %>
+              </small>
+            
+        
+        </div>
+        <%= link_to '続きを見る', ways_path,class:"stretched-link" %>
+      </div>
+      <% end %>
+    </div>
         </div>
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="300"></svg>
@@ -22,12 +57,15 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">国際</strong>
-          <h3 class="mb-0">人気のポスト</h3>
-          <div class="mb-1 text-muted">11/12</div>
-          <p class="card-text mb-auto">これは写真の解説文付きのカードです。自然に説明を加えることができます。</p>
-          <a href="#" class="stretched-link">続きを見る</a>
+          <% @words.each do |word| %>
+                        <div class="card-text">
+                          <%= '・' %>
+                            <%= word.word%>
+                              <% end %>
+       
         </div>
+        <%= link_to '続きを見る', words_path,class:"stretched-link" %>
+        
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="300"><title>Placeholder</title></svg>
 </div>
@@ -39,11 +77,18 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">国際</strong>
-          <h3 class="mb-0">人気のポスト</h3>
-          <div class="mb-1 text-muted">11/12</div>
-          <p class="card-text mb-auto">これは写真の解説文付きのカードです。自然に説明を加えることができます。</p>
-          <a href="#" class="stretched-link">続きを見る</a>
+          <% @questions.each do |question| %>
+          <div class="col">
+            <div class="card shadow-sm">
+              <%= "問."%>
+                <%= question.problem %>
+                  <div>
+                  <%= link_to '続きを見る', questions_path,class:"stretched-link" %>
+                  <p>
+            </div>
+          </div>
+        </div>
+        <% end %>
         </div>
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="300"></svg>
@@ -53,12 +98,17 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">国際</strong>
-          <h3 class="mb-0">人気のポスト</h3>
-          <div class="mb-1 text-muted">11/12</div>
-          <p class="card-text mb-auto">これは写真の解説文付きのカードです。自然に説明を加えることができます。</p>
-          <a href="#" class="stretched-link">続きを見る</a>
-        </div>
+          <% @answers.each do |answer| %>
+           <div class="col" >
+           <div class="card shadow-sm">
+            <%= '・' %><%= answer.title %>
+            
+          
+            </div>
+             <% end %>
+            <%= link_to '続きを見る', answers_path,class:"stretched-link" %>
+            </div>
+            
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="300"><title>Placeholder</title></svg>
  </div>
