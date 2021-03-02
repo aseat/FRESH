@@ -1,4 +1,5 @@
 <%= form_with model: @way, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="field form-group">
     <%= f.label :name, "試験名(必須)" %><br />
       <%= f.text_area :name, id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
@@ -27,3 +28,4 @@
               <%=link_to 'キャンセル', ways_path, class:"btn btn-sm btn-outline-secondary" %>
             </div>
             <% end %>
+            
