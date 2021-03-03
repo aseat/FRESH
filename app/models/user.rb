@@ -24,5 +24,6 @@ class User < ApplicationRecord
     validates :nickname
     validates :text
     validates :password, on: :create
+    validates :email
   end
 end

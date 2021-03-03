@@ -6,7 +6,8 @@
           <% if @way.image.attached? %>
             <%= image_tag @way.image ,width:"483px",height:"300px" %>
               <% end %>
-                <% if @way.video.attached? %> <video src="<75185da29ae0c6f7c056a7877c7895b0 />" type="video/mp4" controls></video>
+                <% if @way.video.attached? %>
+                 <video src="<75185da29ae0c6f7c056a7877c7895b0 />" type="video/mp4" controls></video>
                   <% end %>
                     <div class="card-body">
                       <p class="card-text">
