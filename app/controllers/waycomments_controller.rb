@@ -5,7 +5,7 @@ class WaycommentsController < ApplicationController
       redirect_to way_path(@waycomment.way)
     else
       @way = @waycomment.way
-      @waycomments = @way.waycomment
+      @waycomments = @way.waycomments
       render 'ways/show'
     end
   end

@@ -16,7 +16,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.create!(answer_params)
+    @answer = Answer.create(answer_params)
 
     if @answer.save
       redirect_to answers_path

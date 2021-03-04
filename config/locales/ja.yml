@@ -10,3 +10,27 @@ ja:
         edit: "編集"
         delete: "削除"
         back: "戻る"
+  activerecord:
+    models:
+      way: "試験方法"
+    attributes:
+      way:
+        name: "試験名"
+        text: "説明"
+    waycomment:
+        text: "コメント"
+      word:
+        word: "用語"
+        yomi: "読み"
+        mean: "意味"
+      question: 
+        problem: "問題文"
+        commentary: "解説"
+        category_id: "カテゴリー"
+        answerd_id: ""
+      answer:
+        title: ""
+        question: ""
+        category_id: ""
+      response:
+        text: ""

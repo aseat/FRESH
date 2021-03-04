@@ -23,7 +23,6 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname
     validates :text
-    validates :password, on: :create
-    validates :email
+    
   end
 end

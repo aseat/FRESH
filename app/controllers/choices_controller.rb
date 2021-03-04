@@ -12,7 +12,7 @@ class ChoicesController < ApplicationController
       redirect_to question_choices_path(@choice.question)
     else
       @question = @choice.question
-      @questions = @question.choices
+      @questions = @question.choice
       render 'questions/show'
     end
   end

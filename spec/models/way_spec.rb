@@ -19,16 +19,16 @@ require 'rails_helper'
      end
   end
   context '試験方法登録できない時' do
-  it 'nameが空だと登録できない'do
+  it '試験名が空だと登録できない'do
   @way.name = nil
   @way.valid?
-  expect(@way.errors.full_messages).to include "Nameを入力してください"
+  expect(@way.errors.full_messages).to include "試験名を入力してください"
   end
 
-  it 'textが空だと登録できない'do
+  it '説明が空だと登録できない'do
   @way.text = nil
   @way.valid?
-  expect(@way.errors.full_messages).to include "Textを入力してください"
+  expect(@way.errors.full_messages).to include "説明を入力してください"
   end
   
 

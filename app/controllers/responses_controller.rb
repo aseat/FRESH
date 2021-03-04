@@ -5,7 +5,7 @@ class ResponsesController < ApplicationController
       redirect_to answer_path(@response.answer)
     else
       @answer = @response.answer
-      @responses = @answer.response
+      @responses = @answer.responses
       render 'answers/show'
     end
   end

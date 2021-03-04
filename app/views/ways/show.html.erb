@@ -23,7 +23,7 @@
                           <tr>
                             <td>
                               <div id="way_<4c7b8fa768f1c6f8e2b421b7341ef8af />">
-                                <%= render "way", post: @way %>
+                                <%= render "ways/way", post: @way %>
                               </div>
                             </td>
                           </tr>
@@ -54,6 +54,7 @@
                     <div class="card-body">
                       <% if user_signed_in? && current_user.id != @way.user_id %>
                         <%= form_with model: [@way,@waycomment], local: true do |f|%>
+                          <%= render 'devise/shared/error_messages', resource: @waycomment %>
                           <div class="field form-group"> <br>
                             <h3>
                               <%= f.label :text, "コメント" %>
