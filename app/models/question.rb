@@ -7,14 +7,12 @@ class Question < ApplicationRecord
   has_many :choice, dependent: :destroy
 
   has_one_attached :image
-  with_options presence: true do
-    validates :problem
-    validates :commentary
-  end
-  with_options numericality: { other_than: 1, message: 'を選択してください' }, presence: true do
-    validates :category_id
-    validates :answerd_id
-  end
+  
+   validates :category_id,numericality: { other_than: 1, message: 'を選択してください' }, presence: true
+    validates :problem,presence: true
+    validates :commentary,presence: true
+    validates :answerd_id,numericality: { other_than: 1, message: 'を選択してください' }, presence: true
+  
   def self.search(search)
     if search != ''
       Question.where('problem LIKE(?)', "%#{search}%")

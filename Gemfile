@@ -74,3 +74,4 @@ gem 'rails-i18n'
 gem 'turbolinks', '~> 5'
 gem 'ancestry'
 gem 'ransack'
+gem "carrierwave"

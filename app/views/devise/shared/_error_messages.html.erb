@@ -3,7 +3,9 @@
     
     <ul>
       <% resource.errors.full_messages.each do |message| %>
+       <div class="error-message">
         <li><%= message %></li>
+        </div>
       <% end %>
     </ul>
   </div>
