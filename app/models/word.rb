@@ -3,7 +3,7 @@ class Word < ApplicationRecord
   has_one_attached :image
   with_options presence: true do
     validates :word
-    validates :yomi, format: { with: /[ぁ-んァ-ンー－]/, message: 'はひらがな、カタカナ(全角)で入力してください' }
+    validates :yomi, format: { with: /[ぁ-ん]/, message: 'はひらがなで入力してください' }
     validates :mean
   end
 

@@ -3,10 +3,22 @@
 <p>
 <div class="col" style="padding-left: 280px;padding-top: 10px;width: 1200px;">
             <div class="card shadow-sm">
-<%= link_to @answer.title,answer_path(@answer.id) %>
-<%= @answer.question %>
-
+<small class="text-muted">
+  
+    <% if @answer.user.image.attached? %>
+    <%=link_to image_tag(@answer.user.image,width:"30px",height:"30px",style:"border-radius: 50%"),"/users/#{@answer.user.id}" %>
+    <% end %>
+    <%=link_to @answer.user.nickname,"/users/#{@answer.user.id}" %>
+  </small> 
+  <p>
+<%= "タイトル:" %><%= @answer.title %>
+<p>
+ <%= "質問:" %><%= @answer.question %>
+<p>
+<%= "カテゴリー:" %>
 <%= @answer.category.name %>
+</div>
+ 
 </div>
 </div>
 
@@ -49,8 +61,15 @@
           <div class="card2" style="word-break: break-all;">
                <% if @responses %>
                <%= response.text %>
-               </div>
                <% end %>
+               <small class="text-muted">
+              <%= "投稿者: " %>
+    <% if response.user.image.attached? %>
+    <%= link_to image_tag(response.user.image,width:"30px",height:"30px",style:"border-radius: 50%"),"/users/#{response.user.id}" %>
+    <% end %>
+  <%=link_to response.user.nickname,"/users/#{response.user.id}" %>
+               </div>
+        
                <% end %>
                </div>
                </div>

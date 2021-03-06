@@ -28,9 +28,17 @@ ja:
         commentary: "解説"
         category_id: "カテゴリー"
         answerd_id: "答え"
+      choice:
+        choose_id: "解答"
       answer:
         title: "タイトル"
         question: "質問"
         category_id: "カテゴリー"
       response:
         text: "解答"
+      user:
+        nickname: "ニックネーム"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認)"
+        email: "メールアドレス"
+        text: "自己紹介"

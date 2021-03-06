@@ -8,11 +8,10 @@
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
         
-   
+   <%= "新着 試験方法" %>
    
       <% @ways.each do |way| %>
-      <div class="col">
-        <div class="card shadow-sm">
+  
           <% if way.video.attached? %>
           <%= link_to "クリックすると動画が見れます",way_path(way.id)%>
           <% end %>
@@ -46,10 +45,7 @@
         <%= link_to '続きを見る', ways_path,class:"stretched-link" %>
       </div>
       <% end %>
-    </div>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="300"></svg>
+
 
         </div>
       </div>
@@ -57,6 +53,7 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
+        <%= "新着 用語" %>
           <% @words.each do |word| %>
                         <div class="card-text">
                           <%= '・' %>
@@ -73,52 +70,53 @@
     </div>
   </div>
     </div>
-<div class="row mb-2">
+
+ <div class="row mb-2">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <% @questions.each do |question| %>
-          <div class="col">
-            <div class="card shadow-sm">
-              <%= "問."%>
-                <%= question.problem %>
-                  <div>
-                  <%= link_to '続きを見る', questions_path,class:"stretched-link" %>
-                  <p>
-            </div>
+        <%= "新着 試験問題" %>
+   
+   
+      <% @questions.each do |question| %>
+  
+         
+          <div class="card-body">
+            <p class="card-text">
+            
+            <%= "問:" %><%= question.problem%>
+            </p>
+            
+            <div class="d-flex justify-content-between align-items-center">
+             
           </div>
-        </div>
-        <% end %>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="300"></svg>
+        <%= link_to '続きを見る', questions_path,class:"stretched-link" %>
+      </div>
+      <% end %>
+
+
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
+          <%= "新着 Q&A" %>
           <% @answers.each do |answer| %>
-           <div class="col" >
-           <div class="card shadow-sm">
-            <%= '・' %><%= answer.title %>
-            
-          
-            </div>
-             <% end %>
-            <%= link_to '続きを見る', answers_path,class:"stretched-link" %>
-            </div>
-            
+                        <div class="card-text">
+                         
+                            <%= '・' %><%= answer.title %>
+                              <% end %>
+       
+        </div>
+        <%= link_to '続きを見る', answers_path,class:"stretched-link" %>
+        
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="300"><title>Placeholder</title></svg>
- </div>
+</div>
       </div>
     </div>
   </div>
     </div>
-    
-   <footer class="container">
-   
-    <p>&copy; 2021 Company, Inc. 
-     </body>
+  
 </html>

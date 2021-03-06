@@ -3,12 +3,12 @@
     <div class="container">
       <div class="col" style="width:500px; word-break: break-all;padding-left: 16px;">
         <div class="card shadow-sm">
-          <% if @way.image.attached? %>
-            <%= image_tag @way.image ,width:"483px",height:"300px" %>
-              <% end %>
-                <% if @way.video.attached? %>
-                <% video_tag @way.video.to_s %>
+           <% if @way.video.attached? %>
+                <video src="<%= rails_blob_path(@way.video) %>" type="video/mp4" controls></video>
                   <% end %>
+                  <% if @way.image.attached? %>
+                   <%= image_tag @way.image ,width:"483px",height:"300px" %>
+                    <% end %>
                     <div class="card-body">
                       <p class="card-text">
                         <%= "試験名: " %>

@@ -129,7 +129,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_133851) do
   create_table "ways", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "text", null: false
-    t.string "youtube_url"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

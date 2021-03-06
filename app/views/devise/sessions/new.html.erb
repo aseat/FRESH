@@ -3,6 +3,8 @@
 <h2>ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= render 'devise/shared/error_messages', resource: @user %>
+
   <div class="field">
     <label>メールアドレス</label><br />
     <%= f.email_field :email, autofocus: true,id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %> <p>
@@ -10,7 +12,7 @@
 
   <div class="field">
     <label>パスワード</label><br />
-    <%= f.password_field :password, autocomplete: "current-password",id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+    <%= f.password_field :password, autocomplete: "current-password",id:"inputFile",class:"form-control4" ,type:"password", id:"article_title",rows:"10", cols:"60" %>
   </div>
 
   

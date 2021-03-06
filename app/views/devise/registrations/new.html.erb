@@ -3,8 +3,8 @@
 <div class="hand">
 <h2>新規登録</h2>
 
-<%= form_with model: @user,url:answers_path, class: 'registration-main', local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= form_with model: @user,url:user_registration_path, class: 'registration-main', local: true do |f| %>
+  <%= render 'devise/shared/error_messages', resource: @user %>
 
 <div>
 
@@ -30,12 +30,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
-    <%= f.password_field :password,id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+    <%= f.password_field :password,id:"inputFile",class:"form-control4" ,type:"password", id:"article_title",rows:"10", cols:"60" %>
   </div>
 
  <div class="field form-group">
     <label>パスワード (確認)</label><br />
-    <%= f.password_field :password_confirmation, id:"inputFile",class:"form-control4" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
+    <%= f.password_field :password_confirmation, id:"inputFile",class:"form-control4" ,type:"password", id:"article_title",rows:"10", cols:"60" %>
   </div>
 <p>
 <div>
