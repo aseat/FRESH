@@ -30,8 +30,10 @@ Rails.application.routes.draw do
   end
 
 
-  get 'answers/search', to:'answers#search' 
   resources :answers do
+    collection do
+      get 'search'
+    end
     resources :responses, only: [:create]
   end
    

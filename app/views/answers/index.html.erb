@@ -1,9 +1,8 @@
 <%= render "devise/shared/header" %>
 
-<%= search_form_for(@p, url: answers_search_path, class: "form-control5")  do |f| %>
-
-<%= f.collection_select :category_id_eq, Category.all, :id, :name %>
-<%= f.submit '検索',class:"btn btn-sm btn-outline-third" %>
+<%= form_with(url: search_answers_path, local: true, method: :get, class: "form-control3") do |form| %>
+  <%= form.text_field :keyword, placeholder: "質問内容を検索する", class: "search-input" %>
+  <%= form.submit '検索',class:"btn btn-sm btn-outline-third" %>
 <%= link_to"新規投稿",new_answer_path,class:"btn btn-sm btn-outline-third"%>
 <% end %>
 

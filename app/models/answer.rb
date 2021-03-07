@@ -13,5 +13,11 @@ class Answer < ApplicationRecord
     validates :title
     validates :question
   end
-  
+  def self.search(search)
+    if search != ''
+      Answer.where('question LIKE(?)', "%#{search}%")
+    else
+      Answer.all
+    end
+  end
 end

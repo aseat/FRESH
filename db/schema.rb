@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_133851) do
+ActiveRecord::Schema.define(version: 2021_02_12_095532) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -38,24 +38,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_133851) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-  end
-
-  create_table "answercategories", charset: "utf8", force: :cascade do |t|
-    t.integer "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "answers", charset: "utf8", force: :cascade do |t|
-    t.integer "category_id", null: false
-    t.string "title", null: false
-    t.text "question", null: false
-    t.bigint "user_id", null: false
-    t.bigint "answercategory_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["answercategory_id"], name: "index_answers_on_answercategory_id"
-    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "choices", charset: "utf8", force: :cascade do |t|
@@ -91,16 +73,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_133851) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
-  end
-
-  create_table "responses", charset: "utf8", force: :cascade do |t|
-    t.text "text", null: false
-    t.bigint "user_id", null: false
-    t.bigint "answer_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["answer_id"], name: "index_responses_on_answer_id"
-    t.index ["user_id"], name: "index_responses_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -149,15 +121,11 @@ ActiveRecord::Schema.define(version: 2021_02_15_133851) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "answers", "answercategories"
-  add_foreign_key "answers", "users"
   add_foreign_key "choices", "questions"
   add_foreign_key "choices", "users"
   add_foreign_key "likes", "users"
   add_foreign_key "likes", "ways"
   add_foreign_key "questions", "users"
-  add_foreign_key "responses", "answers"
-  add_foreign_key "responses", "users"
   add_foreign_key "waycomments", "users"
   add_foreign_key "waycomments", "ways"
   add_foreign_key "ways", "users"

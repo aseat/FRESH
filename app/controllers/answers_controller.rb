@@ -1,14 +1,14 @@
 class AnswersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_action :search_answer, only: [:index, :search]
+ 
   def index
     @answer = Answer.includes(:user).order('created_at DESC')
-    @answers = Answer.all
+    
   end
 
   def search
-    @results = @p.result
+    @answers = Answer.search(params[:keyword])
   end
 
   def new
@@ -61,7 +61,5 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
   end
 
-  def search_answer
-    @p = Answer.ransack(params[:q])
-  end
+ 
 end
