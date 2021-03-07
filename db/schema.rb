@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 2021_02_15_133851) do
     t.string "title", null: false
     t.text "question", null: false
     t.bigint "user_id", null: false
+    t.bigint "answercategory_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["answercategory_id"], name: "index_answers_on_answercategory_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
@@ -147,6 +149,7 @@ ActiveRecord::Schema.define(version: 2021_02_15_133851) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "answers", "answercategories"
   add_foreign_key "answers", "users"
   add_foreign_key "choices", "questions"
   add_foreign_key "choices", "users"
