@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2021_02_12_095532) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "answers", charset: "utf8", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.string "title", null: false
+    t.text "question", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
   create_table "choices", charset: "utf8", force: :cascade do |t|
     t.integer "choose_id", null: false
     t.bigint "question_id", null: false
@@ -73,6 +83,16 @@ ActiveRecord::Schema.define(version: 2021_02_12_095532) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "responses", charset: "utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "answer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_responses_on_answer_id"
+    t.index ["user_id"], name: "index_responses_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -121,11 +141,14 @@ ActiveRecord::Schema.define(version: 2021_02_12_095532) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "answers", "users"
   add_foreign_key "choices", "questions"
   add_foreign_key "choices", "users"
   add_foreign_key "likes", "users"
   add_foreign_key "likes", "ways"
   add_foreign_key "questions", "users"
+  add_foreign_key "responses", "answers"
+  add_foreign_key "responses", "users"
   add_foreign_key "waycomments", "users"
   add_foreign_key "waycomments", "ways"
   add_foreign_key "ways", "users"

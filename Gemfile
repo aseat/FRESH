@@ -75,3 +75,4 @@ gem 'turbolinks', '~> 5'
 gem 'ancestry'
 gem 'ransack'
 gem "carrierwave"
+gem "aws-sdk-s3", require: false
