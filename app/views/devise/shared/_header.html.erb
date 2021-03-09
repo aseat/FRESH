@@ -13,7 +13,7 @@
   <header class="blog-header py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="/">コンクリート</a>
+       <%= link_to image_tag("fresh.png",width:"120px",height:"65px"), root_path%> 
       </div>
       
 
@@ -35,7 +35,7 @@
     <nav class="nav d-flex justify-content-between">
       <%=link_to '試験方法',ways_path,class:"p-2 link-secondary"%>
       <%=link_to '用語',words_path,class:"p-2 link-secondary"%>
-      <%=link_to '試験問題',questions_path,class:"p-2 link-secondary"%>
+      <%=link_to 'クイズ問題',questions_path,class:"p-2 link-secondary"%>
       <%=link_to 'Q&A',answers_path,class:"p-2 link-secondary"%>
       <div class="text-muted">
       <% if user_signed_in? %>

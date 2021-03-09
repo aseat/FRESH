@@ -4,8 +4,8 @@ require 'rails_helper'
     @question = FactoryBot.build(:question)
     sleep 0.1
   end
-   describe '試験問題の登録' do
-    context '試験問題登録できる時' do
+   describe 'クイズ問題の登録' do
+    context 'クイズ問題登録できる時' do
      it 'カテゴリー、問題文、解答、答え、画像が存在すれば登録できること' do
       expect(@question).to be_valid
      end
@@ -16,7 +16,7 @@ require 'rails_helper'
      end
     end
 
-    context '試験問題登録できない時' do
+    context 'クイズ問題登録できない時' do
       it 'カテゴリーは選択しないと登録できないこと' do
         @question.category_id = 1
         @question.valid?

@@ -6,8 +6,9 @@
           <%= link_to"新規投稿",new_word_path,class:"btn btn-sm btn-outline-third"%>
             <% end %>
               <p>
+              <h1 style="text-align: center">用語 一覧</h1>
                 <div class="col" style="padding-left: 475px;padding-top: 10px;">
-                  <div class="card1 shadow-sm"> <span style="font-size:30px; color:black; font-weight:bold;">用語一覧</span>
+                  <div class="card1 shadow-sm"> 
                     <p>
                       <% @word.each do |word| %>
                         <div class="card-text">
