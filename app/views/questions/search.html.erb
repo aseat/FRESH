@@ -12,8 +12,6 @@
 <%= "問."%>
 <%= link_to question.problem,question_path(question.id) %>
 <div>
-<%= "カテゴリー："%>
-<%= question.category.name %>
 </div>
 <p>
 </div>
@@ -22,7 +20,7 @@
 </div>
 <% end %>
 <% else %>
-<h1>検索結果なし</h1>
+<h1 style="text-align: center">検索結果なし</h1>
 <%= link_to '戻る', questions_path,class: "btn btn-sm btn-outline-secondary" %>
 <% end %>
 <p>

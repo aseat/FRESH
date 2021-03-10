@@ -26,7 +26,6 @@ ja:
       question: 
         problem: "問題文"
         commentary: "解説"
-        category_id: "カテゴリー"
         answerd_id: "答え"
       choice:
         choose_id: "解答"

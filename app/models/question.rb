@@ -8,7 +8,7 @@ class Question < ApplicationRecord
 
   has_one_attached :image
   
-   validates :category_id,numericality: { other_than: 1, message: 'を選択してください' }, presence: true
+   
     validates :problem,presence: true
     validates :commentary,presence: true
     validates :answerd_id,numericality: { other_than: 1, message: 'を選択してください' }, presence: true

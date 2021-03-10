@@ -1,6 +1,6 @@
 <%= render "devise/shared/header" %>
   <%= form_with(url: search_questions_path, local: true, method: :get, class: "form-control") do |form| %>
-      <%= form.text_field :keyword, placeholder: "クイズ問題を検索", class: "search-input" %>
+      <%= form.text_field :keyword, placeholder: "問題文を検索", class: "search-input" %>
         <%= form.submit "検索", class: "btn btn-sm btn-outline-third" %>
           <%= link_to"新規投稿",new_question_path,class:"btn btn-sm btn-outline-third"%>
             <% end %>
@@ -12,8 +12,6 @@
               <%= "問."%>
                 <%= link_to question.problem,question_path(question.id) %>
                   <div>
-                    <%= "カテゴリー："%>
-                      <%= question.category.name %>
                   </div>
                   <p>
             </div>

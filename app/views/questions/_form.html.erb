@@ -1,10 +1,5 @@
 <%= form_with model: @question, local: true do |f| %>
 <%= render 'devise/shared/error_messages', resource: @question %>
-<div class="field form-group">
-<%= f.label :category, "カテゴリー(必須)" %>
-<br />
-<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
-</p>
 <p>
 <div class="field form-group">
 <%= f.label :problem, "問題文(必須)" %>
