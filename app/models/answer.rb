@@ -6,9 +6,7 @@ class Answer < ApplicationRecord
   has_many :responses, dependent: :destroy
   has_one_attached :image
 
-  with_options numericality: { other_than: 1, message: 'を選択してください' }, presence: true do
-    validates :category_id
-  end
+  
   with_options presence: true do
     validates :title
     validates :question

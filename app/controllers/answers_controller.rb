@@ -54,7 +54,7 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:category_id, :title, :image, :question).merge(user_id: current_user.id)
+    params.require(:answer).permit(:title, :image, :question).merge(user_id: current_user.id)
   end
 
   def set_answer
