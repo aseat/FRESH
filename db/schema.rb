@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 2021_02_12_095532) do
   end
 
   create_table "answers", charset: "utf8", force: :cascade do |t|
-    t.integer "category_id", null: false
     t.string "title", null: false
     t.text "question", null: false
     t.bigint "user_id", null: false
