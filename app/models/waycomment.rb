@@ -4,5 +4,5 @@ class Waycomment < ApplicationRecord
 
   with_options presence: true do
     validates :text
-    end
+  end
 end

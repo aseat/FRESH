@@ -6,7 +6,6 @@ class Answer < ApplicationRecord
   has_many :responses, dependent: :destroy
   has_one_attached :image
 
-  
   with_options presence: true do
     validates :title
     validates :question

@@ -1,10 +1,9 @@
 class AnswersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
- 
+
   def index
     @answer = Answer.includes(:user).order('created_at DESC')
-    
   end
 
   def search
@@ -60,6 +59,4 @@ class AnswersController < ApplicationController
   def set_answer
     @answer = Answer.find(params[:id])
   end
-
- 
 end
