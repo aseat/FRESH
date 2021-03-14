@@ -23,7 +23,7 @@
                           <tr>
                             <td>
                               <div id="way_<4c7b8fa768f1c6f8e2b421b7341ef8af />">
-                                <%= render "ways/way", post: @way %>
+                                <%#= render "ways/way", post: @way %>
                               </div>
                             </td>
                           </tr>
@@ -31,9 +31,9 @@
                         <% end %>
                           <p>
                             <div class="d-flex justify-content-between align-items-center"> <small class="text-muted">
-    <%= l @way.created_at %>
+   <%= "投稿日時: " %> <%= l @way.created_at %>
   </small> <small class="text-muted">
-   <%= "投稿日時: " %> <%= "投稿者: " %>
+    <%= "投稿者: " %>
     <% if @way.user.image.attached? %>
     <%=link_to image_tag(@way.user.image,width:"30px",height:"30px",style:"border-radius: 50%"),"/users/#{@way.user.id}" %>
     <% end %>
