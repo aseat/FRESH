@@ -38,13 +38,13 @@
  <% if user_signed_in? && current_user.id != @answer.user_id %>
                         <%= form_with model: [@answer,@response], local: true do |f|%>
                           <%= render 'devise/shared/error_messages', resource: @response %>
-                          <div class="field form-group"> <br>
+                          <div class="field form-group" style="padding-left: 280px;"> <br>
                             <h3>
-                              <%= f.label :text, "コメント" %>
+                              <%= f.label :text, "回答欄" %>
                             </h3>
-                            <%= f.text_area :text,id:"inputFile",class:"form-control2" ,type:"text", id:"article_title",rows:"10", cols:"60" %>
-                          </div>
-                          <div class="actions text-right">
+                            <%= f.text_area :text,id:"inputFile",class:"form-control3" ,type:"text", id:"article_title",rows:"10", cols:"60",style:"padding-right: 0px;border-left-width: 1px;width: 917px;padding-left: 0px;"%>
+                         
+                          
                             <%= f.submit "答える", class:"btn btn-sm btn-outline-secondary"  %>
                           </div>
                           <% end %>
@@ -56,9 +56,9 @@
 
 
 
-<h2>コメント一覧</h2>
+<h2 style="padding-left: 280px;">回答一覧</h2>
 
-<div class="col" style="width:850px;padding-left:16px;">
+<div class="col" style="width: 1192px;padding-left: 280px;">
 <% @responses.each do |response| %>
      
           <div class="card2" style="word-break: break-all;">

@@ -1,50 +1,63 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 アプリケーション名	
-FLESH
+Flesh
 
 アプリケーション概要	
 試験方法の閲覧、用語一覧、クイズ問題、Q&A
 
 URL	
-https://t.co/fEsBNFOhYx
+http://35.72.213.219/
 
 ゲストログイン有
 
-利用方法	このアプリケーションの利用方法を説明しましょう。
+利用方法	
+
+・試験方法
+「試験方法」ボタンをクリック→詳細情報を観たいものをクリック→詳細画面に移る
+
+・用語
+「用語」ボタンをクリック→用語をクリック→用語の意味が表示される
+
+・クイズ問題
+「クイズ問題」ボタンをクリック→解いてみたい問題をクリック→問題に対し○か×で答える
+
+・Q&A
+
+質問する場合
+「Q&A」ボタンをクリック→「新規投稿」ボタンを押す→タイトルと質問したい内容を記述し、「投稿する」ボタンをクリック
+
+回答する場合
+回答欄に回答を記述する→「答える」ボタンをクリック
 
 目指した課題解決	
 私自身がコンクリート研究開発を行ってきた経歴から教育サービスを充実させたら将来的に即戦力にもなり効率よく育成を行うことが出来るのではないかと考えました。
 また、教育を通じてより興味を持ってもらえるように広告を取り入れました。コンクリート新聞では若手技術者が不足しているため、採用が困難であると行ったことが挙げられるからです。
 建設業に関する正しい試験方法や知識、クイズ問題を通して知識をより定着させるものです。分からないことがあれば質問をすることができます。
 
-洗い出した要件	スプレッドシートにまとめた要件定義を、マークダウンで記述しなおしましょう。
+洗い出した要件	
 
-実装した機能についてのGIFと説明	実装した機能について、それぞれどのような特徴があるのか列挙しましょう。GIFを添えることで、イ
-メージがしやすくなります。
+実装した機能についての説明
+・試験方法
+新規投稿
+
+コメント
+
+・用語
+新規投稿
+
+・Q&A
+新規投稿
+
+解答
+
+・クイズ問題
+
+問題作成
+
+解答
+
+
 
 実装予定の機能	
 ・いいね機能非同期通信
@@ -52,10 +65,31 @@ https://t.co/fEsBNFOhYx
 ・DM機能
 
 データベース設計	ER図等を添付しましょう。
+![Flesh DB設計](https://user-images.githubusercontent.com/73108756/111067353-37101c00-8507-11eb-8f4e-fb21d5cfd616.jpeg)
 
-
-ローカルでの動作方法	git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述しましょう。この時、アプリケーション開発に使用した環境を併記することを忘れないでください（パッケージやRubyのバージョンなど）。
-
+ローカルでの動作方法	
+●バックエンド
+・ruby 2.6.5
+・Rails 6.1.0
+・MySQL 5.6.50
+●フロントエンド
+・HTML / SCSS
+・javascript
+●開発環境
+・VScode 
+・Docker
+・RuboCop
+●CI/CD
+・CircleCI
+・Capistrano
+●バージョン管理
+・git、github
+●インフラ
+・AWS(S3)
+・Nginx/Unicorn
+・ECS
+●テスト
+・Rspec 
 
 
 
