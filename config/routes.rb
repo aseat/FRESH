@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
  
   root to: "concretes#index"
+
+  resource :concretes, only: [:show]
   
   resources :users, only: [:show,:edit]
 

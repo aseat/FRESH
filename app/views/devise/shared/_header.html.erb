@@ -36,7 +36,7 @@
       <%=link_to '試験方法',ways_path,class:"p-2 link-secondary"%>
       <%=link_to '用語',words_path,class:"p-2 link-secondary"%>
       <%=link_to 'クイズ問題',questions_path,class:"p-2 link-secondary"%>
-      <%=link_to 'Q&A',answers_path,class:"p-2 link-secondary"%>
+      <%=link_to 'Q&A',answers_path,class:"p-2 link-secondary"%>      
       <div class="text-muted">
       <% if user_signed_in? %>
       <% if current_user.image.attached? %>
@@ -44,6 +44,7 @@
     <% end %>
       <%=link_to "#{current_user.nickname}さん", "/users/#{current_user.id}", class:"p-2 link-secondary"%>
   <% else %>
+  <%= link_to 'FRESHとは',concretes_path,class:"p-2 link-secondary"%>
   <% end %>
   </div>
    </nav>
