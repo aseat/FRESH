@@ -9,7 +9,11 @@ Flesh
 # URL	
 http://35.72.213.219/
 
-ゲストログイン有
+・ゲストログイン有
+
+・テスト用アカウント
+ID test@gmail.com
+password tesuto
 
 # 利用方法	
 
@@ -35,7 +39,8 @@ http://35.72.213.219/
 また、教育を通じてより興味を持ってもらえるように広告を取り入れました。コンクリート新聞では若手技術者が不足しているため、採用が困難であると行ったことが挙げられるからです。
 建設業に関する正しい試験方法や知識、クイズ問題を通して知識をより定着させるものです。分からないことがあれば質問をすることができます。
 
-# 洗い出した要件	
+# 要件定義	
+https://docs.google.com/spreadsheets/d/1zEGvkH6OybgdI6KMnyoORC-uLSAozPh8dewh0peBBr0/edit?usp=sharing
 
 # 実装した機能についての説明
 ・試験方法
@@ -65,7 +70,7 @@ http://35.72.213.219/
 # データベース設計	
 ![Flesh DB設計](https://user-images.githubusercontent.com/73108756/111067353-37101c00-8507-11eb-8f4e-fb21d5cfd616.jpeg)
 
-ローカルでの動作方法	
+# ローカルでの動作方法	
 ●バックエンド
 ・ruby 2.6.5
 ・Rails 6.1.0
