@@ -814,6 +814,10 @@ progress {
   width: 100%;
 }
 
+.col-13 {
+  font-size: 32px;
+}
+
 .offset-1 {
   margin-left: 8.3333333333%;
 }
@@ -6456,6 +6460,12 @@ textarea.form-control-lg {
 
 .shadow {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-sm2 {
+  display: flex;
+  font-size: 26px;
+  text-align: center;
 }
 
 .shadow-sm {

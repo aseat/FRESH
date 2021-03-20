@@ -1,8 +1,61 @@
 <%= render "devise/shared/header" %>
   <div class="container1">
-   <%= image_tag "low-angle-view-of-modern-skyscrapers-under-the-sunlight-and-a-blue-sky-at-daytime.jpg",height:"550px" %>
+   <%= image_tag "low-angle-view-of-modern-skyscrapers-under-the-sunlight-and-a-blue-sky-at-daytime.jpg",height:"300px" %>
    <p>FRESHとは</p>
-   <p1><p1>
+  </div>
 
-   
-   </div>
+<p>
+
+<h1 style="text-align: center;"><span style="border-bottom: solid 3px #87CEFA;">FRESHとは...</span></h1> 
+<p>
+<div class="lead" style="text-align: center; color: #ff69b4;">あれ？この用語の意味なんだっけ？なんだっけ？</div><p>
+<div class="lead" style="text-align: center; color: #ff69b4;">試験業務のやり方の説明を受けたけどイメージできない</div><p>
+<div class="lead" style="text-align: center; color: #ff69b4;">知識をより定着させたい</div><p>
+<div class="lead" style="text-align: center; color: #ff69b4;">分からないことがあるけど上司に質問したら怒られるかも...</div><p>
+<div class="lead" style="text-align: center; font-size: 25px;">そんな悩みをこの手でぶっ飛ばしたいと思いませんか？</div><p>
+
+<div class="lead" style="text-align: center; font-size: 50px; color: blue;">『FRESHは若手技術者の教育に特化したサイトです！！』</div>
+<p>
+
+<h1 style="text-align: center; padding-top: 40px;"><span style="border-bottom: solid 3px #87CEFA;">FRESHの機能<span></h1>
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">試験方法</h2>
+        <p class="lead">建設業における試験業務のやり方を知ることができます!</p>
+      </div>
+     <%= image_tag "Fresh.jpeg",height: "300px", width: "330px" %>
+
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">用語</h2>
+        <p class="lead">建設業における専門用語の意味を知ることができます！</p>
+      </div>
+       <%= image_tag "Fresh2.jpeg",height: "300px", width: "330px" %>
+       </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="width: 596px;">
+      <div class="my-3 p-3" style="width: 282px; height: 200px;">
+        <h2 class="display-5">クイズ問題</h2>
+        <p class="lead">○×問題形式で自分の実力を試すことができます！</p>
+      </div>
+       <%= image_tag "Fresh3.jpeg",height: "300px", width: "330px" %>
+       </div>
+    
+      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Q&A</h2>
+        <p class="lead">分からないことを質問することができます！</p>
+      </div>
+       <%= image_tag "Fresh4.jpeg",height: "300px", width: "330px" %>
+  </div>
+  </div>
+  <p>
+<p>
+<h1 style="text-align: center; "><span style="border: 3px solid #00ffff;">早速FRESHをはじめる</span></h1> 
+
+<div class="col-13" style="text-align: center;">
+         <a class="btn btn-sm btn-outline-secondary" href="/users/sign_up" >新規登録してはじめる</a>
+         <%= link_to 'ログイン', user_session_path, method: :post, class: "btn btn-sm btn-outline-secondary" %>
+         <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "btn btn-sm btn-outline-secondary" %>
+</div>
