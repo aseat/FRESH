@@ -74,16 +74,11 @@
                                   <% if @waycomments %>
                                     <div class="card2" style="word-break: break-all;">
                                       <%= waycomment.text %>
-                                    
+                                   
+                                    </div>
                                     <% end %>
-                                    <p>
-                                    <%= "投稿者: " %>
-    <% if waycomment.user.image.attached? %>
-    <%= link_to image_tag(waycomment.user.image,width:"30px",height:"30px",style:"border-radius: 50%"),"/users/#{waycomment.user.id}" %>
-    <% end %>
-  <%=link_to waycomment.user.nickname,"/users/#{waycomment.user.id}" %>
+                                    
                                       <% end %>
-                                      </div>
                     </div>
                   </div>
       </div>
