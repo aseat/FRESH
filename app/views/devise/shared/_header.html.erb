@@ -33,17 +33,36 @@
 
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
-    
+    <% if controller_name != 'ways' %>
       <%=link_to '試験方法',ways_path,class:"p-2 link-secondary"%>
+     <% else %>
+     <%=link_to '試験方法',ways_path,class:"p-2 link-secondary",style:"color: blue;"%>
+     <% end %> 
+    <% if controller_name != 'words' %>
       <%=link_to '用語',words_path,class:"p-2 link-secondary"%>
+    <% else %>
+    <%=link_to '用語',words_path,class:"p-2 link-secondary",style:"color: blue;"%>
+    <% end %>
+    <% if controller_name != 'questions' %>
       <%=link_to 'クイズ問題',questions_path,class:"p-2 link-secondary"%>
-      <%=link_to 'Q&A',answers_path,class:"p-2 link-secondary"%>      
+      <% else %>
+      <%=link_to 'クイズ問題',questions_path,class:"p-2 link-secondary",style:"color: blue;"%>
+      <% end %>
+    <% if controller_name != 'answers' %>
+      <%=link_to 'Q&A',answers_path,class:"p-2 link-secondary"%>  
+      <% else %>
+      <%=link_to 'Q&A',answers_path,class:"p-2 link-secondary",style:"color: blue;"%> 
+      <% end %>
       <div class="text-muted">
       <% if user_signed_in? %>
       <% if current_user.image.attached? %>
      <%=link_to image_tag(current_user.image,width:"30px",height:"30px",style:"border-radius: 50%"),"/users/#{current_user.id}" %>
     <% end %>
+    <% if controller_name != 'users' %>
       <%=link_to "#{current_user.nickname}さん", "/users/#{current_user.id}", class:"p-2 link-secondary"%>
+ <% else %>
+      <%=link_to "#{current_user.nickname}さん", "/users/#{current_user.id}", class:"p-2 link-secondary",style:"color: blue;"%>
+ <% end %>
   <% else %>
   <%= link_to 'FRESHとは',concretes_path,class:"p-2 link-secondary" ,style:"color: blue; font-size: 20px;"%>
   <% end %>
