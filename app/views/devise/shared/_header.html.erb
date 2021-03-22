@@ -34,7 +34,7 @@
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
     <% if controller_name != 'ways' %>
-      <%=link_to '試験方法',ways_path,class:"p-2 link-secondary"%>
+      <%=link_to '試験方',ways_path,class:"p-2 link-secondary"%>
      <% else %>
      <%=link_to '試験方法',ways_path,class:"p-2 link-secondary",style:"color: blue;"%>
      <% end %> 
@@ -50,7 +50,7 @@
       <% end %>
     <% if controller_name != 'answers' %>
       <%=link_to 'Q&A',answers_path,class:"p-2 link-secondary"%>  
-      <% else %>
+      <% else %>　
       <%=link_to 'Q&A',answers_path,class:"p-2 link-secondary",style:"color: blue;"%> 
       <% end %>
       <div class="text-muted">
