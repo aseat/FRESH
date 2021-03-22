@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @question = Question.includes(:user).order('created_at DESC')
+    @choices = Choice.all 
   end
 
   def new
