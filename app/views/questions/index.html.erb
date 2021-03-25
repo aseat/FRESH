@@ -12,17 +12,7 @@
               <%= "問."%>
                 <%= link_to question.problem,question_path(question.id) %>
                   <div>
-                  <%= "正答率:"%>
                  
-                  
-                  <% @choices.each do |choice| %>
-                    <%#= choice.id %>
-                  <% if question.answerd.id == choice.choose.id %>
-                  <%= choice.choose.id %>
-                
-                 
-                  <% end %>
-                  <% end %>
                   </div>
                   <p>
             </div>
