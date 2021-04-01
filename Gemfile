@@ -80,6 +80,7 @@ gem 'turbolinks', '~> 5'
 gem 'ancestry'
 gem 'ransack'
 gem "carrierwave"
+gem 'mimemagic', '~> 0.3.0'
 gem "aws-sdk-s3", require: false
 group :production do
   gem 'unicorn', '5.4.1'
