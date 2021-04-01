@@ -68,7 +68,7 @@ https://docs.google.com/spreadsheets/d/1zEGvkH6OybgdI6KMnyoORC-uLSAozPh8dewh0peB
 # ローカルでの動作方法	
 ●バックエンド
 ・ruby 2.6.5
-・Rails 6.1.0
+・Rails 6.1.3.1
 ・MySQL 5.6.50
 ●フロントエンド
 ・HTML / SCSS
