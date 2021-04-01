@@ -1,20 +1,25 @@
-app_path = File.expand_path('../../../', __FILE__) 
+app_path = File.expand_path('../../', __FILE__)
+
 
 worker_processes 1
 
-working_directory "#{app_path}/current" 
 
-pid "#{app_path}/shared/tmp/pids/unicorn.pid" 
+working_directory app_path
 
-listen "#{app_path}/shared/tmp/sockets/unicorn.sock" 
 
-stderr_path "#{app_path}/shared/log/unicorn.stderr.log" 
+pid "#{app_path}/tmp/pids/unicorn.pid"
 
-stdout_path "#{app_path}/shared/log/unicorn.stdout.log" 
+
+listen 3000
+
+
+stderr_path "#{app_path}/log/unicorn.stderr.log"
+
+
+stdout_path "#{app_path}/log/unicorn.stdout.log"
 
 
 timeout 60
-
 
 
 preload_app true
@@ -29,7 +34,7 @@ before_fork do |server, worker|
     ActiveRecord::Base.connection.disconnect!
 
   if run_once
-    run_once = false 
+    run_once = false # prevent from firing again
   end
 
   old_pid = "#{server.config[:pid]}.oldbin"
