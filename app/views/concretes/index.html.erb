@@ -47,11 +47,11 @@
                 <%=link_to way.user.nickname,"/users/#{way.user.id}" %>
               </small>
             
-        
+        <% end %>
         </div>
         <%= link_to '続きを見る', ways_path,class:"stretched-link" %>
       </div>
-      <% end %>
+      
 
 
         </div>
@@ -97,9 +97,10 @@
             <div class="d-flex justify-content-between align-items-center">
              
           </div>
+          <% end %>
         <%= link_to '続きを見る', questions_path,class:"stretched-link" %>
       </div>
-      <% end %>
+      
 
  
         </div>
