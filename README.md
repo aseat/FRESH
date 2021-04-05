@@ -9,7 +9,7 @@ Flesh
 
 
 # URL	
-http://35.72.213.219/
+http://fresh.ga/ 
 
 ・ゲストログイン有
 
