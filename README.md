@@ -74,7 +74,7 @@ https://docs.google.com/spreadsheets/d/1zEGvkH6OybgdI6KMnyoORC-uLSAozPh8dewh0peB
 ・HTML / SCSS
 ・javascript
 ●開発環境
-・VScode 
+・VScode  
 ・Docker
 ・RuboCop
 ●CI/CD
