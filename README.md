@@ -21,14 +21,15 @@ password tesuto
 
 ・試験方法
 「試験方法」ボタンをクリック→詳細情報を観たいものをクリック→詳細画面に移る 
-
+<img width="457" alt="Fresh1" src="https://user-images.githubusercontent.com/73108756/114030206-40499a00-98b5-11eb-92e6-f55ede18c1e2.png">
 ・用語
 「用語」ボタンをクリック→用語をクリック→用語の意味が表示される
-
+![Fresh2](https://user-images.githubusercontent.com/73108756/114030228-4475b780-98b5-11eb-8cd6-68b5d92def56.jpeg)
 ・クイズ問題
 「クイズ問題」ボタンをクリック→解いてみたい問題をクリック→問題に対し○か×で答える
-
+![Fresh3](https://user-images.githubusercontent.com/73108756/114030224-43dd2100-98b5-11eb-95c8-8b3733ea7c10.jpeg)
 ・Q&A
+![Fresh4](https://user-images.githubusercontent.com/73108756/114030221-43dd2100-98b5-11eb-99c9-818ebc36c6c5.jpeg)
 
 質問する場合
 「Q&A」ボタンをクリック→「新規投稿」ボタンを押す→タイトルと質問したい内容を記述し、「投稿する」ボタンをクリック
