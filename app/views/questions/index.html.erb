@@ -1,5 +1,5 @@
 <%= render "devise/shared/header" %>
-  <%= form_with(url: search_questions_path, local: true, method: :get, class: "form-control") do |form| %>
+  <%= form_with(url: search_questions_path, local: true, method: :get, class: "form-control6") do |form| %>
       <%= form.text_field :keyword, placeholder: "問題文を検索", class: "search-input" %>
         <%= form.submit "検索", class: "btn btn-sm btn-outline-third" %>
           <%= link_to"新規投稿",new_question_path,class:"btn btn-sm btn-outline-third"%>
@@ -7,7 +7,7 @@
               <p>
      <h1 style="text-align: center">クイズ問題 一覧</h1>
       <% @question.each do |question| %>
-          <div class="col" style="padding-left: 280px;padding-top: 10px;width: 1200px;">
+          <div class="form-control6">
             <div class="card shadow-sm">
               <%= "問."%>
                 <%= link_to question.problem,question_path(question.id) %>

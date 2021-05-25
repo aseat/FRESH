@@ -2222,8 +2222,9 @@ progress {
 
 .form-control6 {
   display: block;
-  width: 1536px;
-  padding: 0.375rem 35.5rem;
+  
+  text-align: center;
+
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
