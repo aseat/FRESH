@@ -4,8 +4,8 @@ class QuestionsController < ApplicationController
 
   def index
     @question = Question.includes(:user).order('created_at DESC')
-    @choice = Choice.select("id").count
-    @choices = Choice.all 
+    @choice = Choice.select('id').count
+    @choices = Choice.all
   end
 
   def new
