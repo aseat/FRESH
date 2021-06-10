@@ -2,7 +2,7 @@
   <body>
     <div class="container">
       <div class="col" style="width:500px; word-break: break-all;padding-left: 16px;">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm" style="background-color: green;">
            <% if @way.video.attached? %>
                 <video src="<%= rails_blob_path(@way.video) %>" type="video/mp4" controls></video>
                   <% end %>
