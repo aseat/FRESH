@@ -9,13 +9,9 @@ Flesh
 
 
 # URL	
-http://fresh.ga/
+https://t.co/UM4lMdtuLo
 
 ・ゲストログイン有
-
-・テスト用アカウント
-ID test@gmail.com
-password tesuto
 
 # 利用方法	
 
