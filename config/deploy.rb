@@ -39,17 +39,20 @@ set :repo_url, "git@example.com:me/my_repo.git"
 # set :ssh_options, verify_host_key: :secure
 lock '3.16.0'
 
-set :application, 'original'
+set :application, 'original1'
+
 
 set :repo_url,  'git@github.com:aseat/FRESH.git'
+
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.5' 
 
+
 set :ssh_options, auth_methods: ['publickey'],
-                                  keys: ['~/.ssh/Freshman.pem'] 
+                                  keys: ['~/.ssh/httpsfresh.pem']  
 
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
