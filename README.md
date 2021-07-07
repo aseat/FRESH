@@ -58,7 +58,6 @@ https://docs.google.com/spreadsheets/d/1zEGvkH6OybgdI6KMnyoORC-uLSAozPh8dewh0peB
 ・いいね機能非同期通信
 ・フォロー機能
 ・DM機能
-・https化
 
 # データベース設計	
 ![Flesh DB設計](https://user-images.githubusercontent.com/73108756/111067353-37101c00-8507-11eb-8f4e-fb21d5cfd616.jpeg)
