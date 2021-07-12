@@ -5,5 +5,4 @@ for i in 1..33333
     puts sum 
   else
   end
-  
 end
