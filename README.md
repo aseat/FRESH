@@ -82,6 +82,6 @@ https://docs.google.com/spreadsheets/d/1zEGvkH6OybgdI6KMnyoORC-uLSAozPh8dewh0peB
 ●インフラ
 ・AWS(S3)
 ・Nginx/Unicorn
-・ECS
+・EC2
 ●テスト
 ・Rspec 
