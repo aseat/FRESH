@@ -13,6 +13,7 @@ module Original
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+    config.action_controller.allow_forgery_protection = false
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
