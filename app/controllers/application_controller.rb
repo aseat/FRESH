@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。' if email == 'guest@example.com'
   end
 
+  def users_guest_sign_in
+    root_path 
+  end
+
   def after_sign_out_path_for(resource_or_scope)
     root_path 
   end
