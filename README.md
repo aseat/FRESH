@@ -80,7 +80,7 @@ https://docs.google.com/spreadsheets/d/1zEGvkH6OybgdI6KMnyoORC-uLSAozPh8dewh0peB
 ●バージョン管理
 ・git、github
 ●インフラ
-・AWS(S3)
+・AWS(S3,EC2,ROUTE53)
 ・Nginx/Unicorn
 ・EC2
 ●テスト
