@@ -13,12 +13,6 @@ class User < ApplicationRecord
   has_many :waycomments
   has_many :questions, dependent: :destroy
 
-  def self.guest
-    find_or_create_by!(nickname: 'ゲスト', email: 'guest@gmail.com', text: 'ゲストです。') do |user|
-      user.password = SecureRandom.urlsafe_base64
-    end
-  end
-
   with_options presence: true do
     validates :nickname
     validates :text
