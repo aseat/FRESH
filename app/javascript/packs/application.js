@@ -9,6 +9,7 @@
 //= require turbolinks
 //= require_tree .
 
+ 
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 
