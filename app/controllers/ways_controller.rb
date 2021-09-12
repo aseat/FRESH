@@ -25,7 +25,7 @@ class WaysController < ApplicationController
   end
 
   def edit
-    unless @way.user.id == current_user.id
+    unless @way.user.id == current_user.id 
       @way = Way.create(way_params)
       if @way.save
 
